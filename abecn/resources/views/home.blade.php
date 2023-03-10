@@ -117,32 +117,32 @@
                 <a href="#">MORE DETAILS</a>
             </div>
         </section>
-        <footer>
-            <div>
-                <a href="#">
-                    <img src="" alt="ABECN logo">
-                </a>
-                <ul>
-                    <li><a href="#">PRIVACY</a></li>
-                    <li><a href="#">COPYRIGHT</a></li>
-                    <li><a href="#">SITEMAP</a></li>
-                    <li><a href="#">CONTACT US</a></li>
-                </ul>
-                <form action="#">
-                    <h3>SIGN UP FOR OUR NEWSLETTER</h3>
-                    <label for="name">Full Name</label>
-                    <input type="text" name="name">
-                    <label for="email">Email</label>
-                    <input type="email" name="email">
-                    <input type="submit" name="submit" value="SIGN UP">
-                </form>
-            </div>
-        </footer>
         @foreach ($users as $user)
 
             <p>{{ $user->first_name }}</p>
 
         @endforeach
     </main>
+    <footer>
+        <div>
+            <a href="#">
+                <img src="" alt="ABECN logo">
+            </a>
+            <ul>
+                <li><a href="#">PRIVACY</a></li>
+                <li><a href="#">COPYRIGHT</a></li>
+                <li><a href="#">SITEMAP</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+            <form action="#">
+                <h3>SIGN UP FOR OUR NEWSLETTER</h3>
+                <label for="name">Full Name</label>
+                <input type="text" name="name">
+                <label for="email">Email</label>
+                <input type="email" name="email">
+                <input type="submit" name="submit" value="SIGN UP">
+            </form>
+        </div>
+    </footer>
 </body>
 </html>
