@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Group;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,7 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(5)->create();
+        $group = Group::factory(3)->create();
+        User::factory(5)->state(new Sequence(
+            [
+                'group_id' => $group->first()->id
+            ],
+            [
+                'group_id' => $group->last()->id
+            ],
+        ))->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
