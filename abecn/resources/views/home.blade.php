@@ -65,6 +65,7 @@
 
             <p><strong>First Name:</strong> {{ $user->first_name }}</p>
             <p><strong>Group Name:</strong> {{ $user->group->name }}</p>
+            <p><strong>Membership Name:</strong> {{ $user->membership->name }}</p>
             <br>
 
         @endforeach

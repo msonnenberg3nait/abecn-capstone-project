@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Group;
+use App\Models\Membership;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -20,6 +21,7 @@ class UserFactory extends Factory
     {
         return [
             'group_id' => Group::factory(),
+            'membership_id' => Membership::factory(),
             'first_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
