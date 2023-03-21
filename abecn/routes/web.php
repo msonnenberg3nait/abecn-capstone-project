@@ -22,3 +22,5 @@ Route::get('/', function () {
         'users' => $user
     ]);
 });
+
+Route::view('/registration', 'registration');
