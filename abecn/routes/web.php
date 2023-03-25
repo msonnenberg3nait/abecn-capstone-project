@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Group;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,5 @@ Route::get('/', function () {
         'users' => $user
     ]);
 });
+
+Route::view('/registration', 'registration');
