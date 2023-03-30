@@ -33,7 +33,25 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+
+
+Route::view('/about', 'about');
+
+Route::view('/membership', 'membership');
+
+Route::view('/committees', 'committees');
+
+Route::view('/resources', 'resources');
+
+Route::view('/events', 'events');
+
+Route::view('/directors', 'directors');
+
+Route::view('/contact', 'contact');
+
 require __DIR__.'/auth.php';
-Route::view('/registration', 'registration');
+
 
 Route::view('/sponsors', 'sponsors');
+
