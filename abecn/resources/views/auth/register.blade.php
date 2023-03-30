@@ -3,7 +3,6 @@
         @csrf
 
         <div x-cloak x-show="formStep === 1">
-            <a href="#">asdas</a>
             <div class="mt-4">
                 <x-input-label for="firstname" :value="__('First Name')" />
                 <x-text-input type="text" class="block mt-1 w-full" name="firstname" id="firstname" :value="old('firstname')" required autofocus />
