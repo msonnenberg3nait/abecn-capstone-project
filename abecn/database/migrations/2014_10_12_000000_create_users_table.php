@@ -13,24 +13,23 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('group_id');
-            $table->foreignId('membership_id');
+            $table->foreignId('group_id')->default(2); // regular user
+            $table->foreignId('membership_id')->default(2); // individual
             $table->string('first_name', 30);
             $table->string('last_name', 30);
+            $table->string('display_name', 30)->unique();
+            $table->string('password');
+            $table->date('dob');
+            $table->string('organization', 60)->nullable();
+            $table->string('specialty', 60)->nullable();
             $table->string('email', 40)->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->char('phone');
-            $table->date('dob');
-            $table->string('primary_address');
-            $table->string('secondary_address');
-            $table->string('city', 20);
-            $table->char('postal');
-            $table->string('display_name');
-            $table->string('organization');
-            $table->string('specialty');
-            $table->timestamp('date_registered');
-            $table->boolean('active_yn');
+            $table->varchar('phone', 11)->nullable();
+            $table->string('primary_address', 100)->nullable();
+            $table->string('secondary_address', 100)->nullable();
+            $table->string('city', 20)->nullable();
+            $table->char('postal', 6)->nullable();
+            $table->boolean('active_yn')->default(1); // active
             $table->rememberToken();
             $table->timestamps();
         });

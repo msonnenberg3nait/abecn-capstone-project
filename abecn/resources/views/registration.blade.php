@@ -2,8 +2,11 @@
     <main>
 
         <form method="POST" action="#" x-data="{ formStep: 1 }">
+            <h1>Membership Application</h1>
 
             <div x-cloak x-show="formStep === 1">
+                <h2>Personal Information</h2>
+                <p>All fields marked with a red asterisk * are required.</p>
                 <div>
                     <label for="firstname">First Name</label>
                     <input type="text" name="firstname" id="firstname">
@@ -35,6 +38,8 @@
             </div>
 
             <div x-cloak x-show="formStep === 2">
+                <h2>Contact Information</h2>
+                <p>All fields marked with a red asterisk * are required.</p>
                 <div>
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email">
@@ -62,6 +67,8 @@
             </div>
 
             <div x-cloak x-show="formStep === 3">
+                <h2>Billing Information</h2>
+                <p>All fields marked with a red asterisk * are required.</p>
                 <div>
                     <label for="cardholder">Cardholder Name</label>
                     <input type="text" name="cardholder" id="cardholder">
@@ -97,10 +104,10 @@
               type="button"
               class="button"
             >
-              Next Step
+              Next
             </button>
 
-            <input x-cloak x-show="formStep === 3" type="submit" value="SUBMIT">
+            <input x-cloak x-show="formStep === 3" type="submit" value="PURCHASE">
         </form>
 
     </main>

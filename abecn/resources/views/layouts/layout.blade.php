@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ABECN - Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'ABECN') }}</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/modern-reset.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/modern-reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}"> --}}
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
     <header>
@@ -28,15 +29,16 @@
             ? window.innerWidth : screen.width;
             if (width >= 760) {
                 open = true
-            } else {
+            }
+            if (width < 760) {
                 open = false
             }
         ">
             <div class="inner-nav flex">
-                <a href="#" class="logo">
+                <a href="{{ route('home') }}" class="logo">
                     <img src="{{ asset('img/ABECN_PNG.webp') }}" alt="ABECN logo">
                 </a>
-                <div class="hamburger-menu" x-on:click="open = !open" :class="open ? 'hamburger-open' : ''">
+                <div class="hamburger-menu" x-on:click="open = !open" :class="open && 'hamburger-open'">
                     <div>
                         <span></span>
                         <span></span>
@@ -46,9 +48,9 @@
             </div>
             <nav x-show="window.innerWidth >= 760 ? true: open">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li>
-                        <a href="/registration">
+                        <a href="/register">
                             Membership Info
                         </a>
                         <ul class="member-info-dropdown">
@@ -98,6 +100,22 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
+        </div>
+
+        <div class="secondary-header">
+            @auth
+                <p>Welcome back, {{ Auth::user()->display_name }}</p>
+
+                <a href="{{ route('profile.edit') }}">Settings</a>
+
+                <form method="POST" action="{{ route('logout') }}" class="logout-form">
+                    @csrf
+
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+                </form>
+            @else
+                <a href="{{ route('login') }}">Login</a>
+            @endauth
         </div>
     </header>
     <div class="container">

@@ -2,7 +2,7 @@
     <main>
         <section>
             <div>
-                <h1>ALBERTA BUILDING ENVELOPE COUNCIL NORTH</h1>
+                <h1>ALBERT BUILDING ENVELOPE COUNCIL NORTH</h1>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
                 <a href="#">BECOME A MEMBER</a>
             </div>
