@@ -24,3 +24,17 @@ Route::get('/', function () {
 });
 
 Route::view('/registration', 'registration');
+
+Route::view('/about', 'about');
+
+Route::view('/membership', 'membership');
+
+Route::view('/committees', 'committees');
+
+Route::view('/resources', 'resources');
+
+Route::view('/events', 'events');
+
+Route::view('/directors', 'directors');
+
+Route::view('/contact', 'contact');
