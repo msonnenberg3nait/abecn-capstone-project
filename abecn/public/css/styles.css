@@ -20,7 +20,7 @@ ul {
     margin: 0;
 }
 
-a {
+nav a {
     text-decoration: none;
     color: white;
 }
@@ -94,6 +94,41 @@ nav svg {
     width: 0.875rem;
     height: 0.875rem;
     fill: white;
+}
+
+.sponsor-page h2 {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.search-filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.search-filter-wrapper .search {
+    width: 40rem;
+}
+
+.container {
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.sponsors-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.sponsor-card {
+    text-align: center;
+}
+
+.sponsor-card img {
+    width: 20rem;
 }
 
 @media screen and (min-width: 760px) {
