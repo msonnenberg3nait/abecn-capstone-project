@@ -39,7 +39,7 @@ class RegisteredUserController extends Controller
             'organization' => ['nullable', 'string', 'max:60'],
             'specialty' => ['nullable', 'string', 'max:60'],
             'email' => ['required', 'string', 'email', 'max:40', 'unique:'.User::class],
-            'phone' => ['nullable', 'min:10', 'max:11', 'integer', 'numeric'],
+            'phone' => ['nullable', 'digits:10', 'integer', 'numeric'],
             'address' => ['nullable', 'string', 'min:3', 'max:60'],
             'address2' => ['nullable', 'string', 'min:3', 'max:60'],
             'city' => ['nullable', 'string', 'min:3', 'max:20'],
