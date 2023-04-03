@@ -32,18 +32,6 @@ body a {
     margin: 0;
 }
 
-/* !TEMP STYLES */
-body form {
-    max-width: 80%;
-    margin: 0 auto;
-}
-
-.flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .inner-nav {
     padding: 1rem 0.75rem;
     width: 100%;
@@ -89,7 +77,7 @@ body form {
 nav {
     position: absolute;
     background-color: var(--light);
-    top: -517%;
+    top: -571%;
     width: 100%;
 }
 
@@ -109,45 +97,37 @@ nav svg {
     fill: white;
 }
 
-@media screen and (min-width: 760px) {
+.secondary-header a {
+    background-color: var(--dark);
+    border-bottom: 4px solid var(--light);
+}
+
+main {
+    margin-top: -89px; /* header height still takes up space at the top of the page, even though it is "stuck" to the bottom. This fixes it. */
+    padding: 1rem 0.75rem;
+}
+
+
+@media screen and (min-width: 768px) {
     header {
         position: unset;
         top: unset;
         z-index: unset;
+        margin-top: 45px;
     }
 
     .hamburger-menu {
         display: none;
     }
 
-    .outer-nav {
+    .outer-nav,
+    main {
         padding: 0.75rem 1.25rem;
     }
 
     .inner-nav {
         width: unset;
         padding: unset;
-    }
-
-    .secondary-header {
-        background-color: var(--light);
-        padding: 0 1.25rem;
-        color: white;
-        display: flex;
-        justify-content: right;
-        gap: 1.5rem;
-    }
-
-    .secondary-header a {
-        padding: 0.75rem 0;
-    }
-
-    .secondary-header a:hover {
-        text-decoration: underline;
-    }
-
-    .secondary-header p {
-        padding: 0.75rem 0;
     }
 
     nav {
@@ -169,7 +149,8 @@ nav svg {
         text-decoration: underline;
     }
 
-    nav > ul {
+    nav > ul,
+    .secondary-header > div {
         display: flex;
         gap: 1rem;
     }
@@ -204,14 +185,50 @@ nav svg {
         padding-left: 0.5rem;
         text-align: center;
     }
+
+    .secondary-header {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        right: 0;
+        background-color: var(--light);
+        color: white;
+        display: flex;
+        justify-content: right;
+        gap: 1.5rem;
+    }
+
+    .secondary-header a {
+        padding: 0.75rem 0;
+        width: unset;
+        background-color: var(--light);
+        border-bottom: 0;
+    }
+
+    .secondary-header a:hover {
+        text-decoration: underline;
+    }
+
+    .secondary-header > div {
+        padding: 0rem 1.25rem;
+    }
+
+    main {
+        margin-top: unset;
+    }
 }
 
 @media screen and (min-width: 1020px) {
+    header {
+        margin-top: 51px;
+    }
+
     nav a {
         font-size: 1.125rem;
     }
 
-    nav > ul {
+    nav > ul,
+    .secondary-header > div {
         gap: 2.5rem;
     }
 
@@ -229,8 +246,15 @@ nav svg {
 }
 
 @media screen and (min-width: 1400px) {
-    header > div {
+    .outer-nav,
+    main {
         max-width: 1400px;
         margin: 0 auto;
+    }
+
+    .secondary-header > div {
+        width: 1400px;
+        margin: 0 auto;
+        text-align: right;
     }
 }
