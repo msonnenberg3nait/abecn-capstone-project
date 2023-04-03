@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Models\User;
+use App\Models\Sponsor;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +34,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/sponsors', function () {
+    $sponsor = Sponsor::get();
 
+    return view('sponsors', [
+        'sponsors' => $sponsor
+    ]);
+});
+
+Route::get('sponsors/{sponsor:company_name}', function (Sponsor $sponsor) {
+    return view('/sponsor', [
+        'sponsor' => $sponsor
+    ]);
+});
 
 
 Route::view('/about', 'about');
@@ -53,5 +66,4 @@ Route::view('/contact', 'contact');
 require __DIR__.'/auth.php';
 
 
-Route::view('/sponsors', 'sponsors');
 

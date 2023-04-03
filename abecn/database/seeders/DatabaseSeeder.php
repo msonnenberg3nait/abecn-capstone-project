@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\Group;
 use App\Models\Membership;
 use App\Models\User;
+use App\Models\Sponsor;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Seeder;
 
@@ -28,6 +29,8 @@ class DatabaseSeeder extends Seeder
                 'membership_id' => $membership->last()->id
             ],
         ))->create();
+
+        Sponsor::factory(9)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
