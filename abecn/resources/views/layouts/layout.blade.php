@@ -22,7 +22,7 @@
 <body>
     <header>
         <div
-        class="outer-nav flex"
+        class="outer-nav flex justify-between"
         x-data="{ open: false }"
         @resize.window="
             width = (window.innerWidth > 0)
@@ -34,7 +34,7 @@
                 open = false
             }
         ">
-            <div class="inner-nav flex">
+            <div class="inner-nav flex justify-between items-center">
                 <a href="{{ route('home') }}" class="logo">
                     <img src="{{ asset('img/ABECN_PNG.webp') }}" alt="ABECN logo">
                 </a>
@@ -99,28 +99,28 @@
                     </li>
                     <li><a href="#">Contact</a></li>
                 </ul>
+                <div class="secondary-header">
+                    <div class="flex md:flex-none justify-center md:justify-end gap-1">
+                        @auth
+                            {{-- Don't delete --}}
+                            {{-- <p>Welcome back, {{ Auth::user()->display_name }}</p> --}}
+
+                            <a href="{{ route('profile.edit') }}" class="text-center basis-1/2 md:basis-0">Settings</a>
+
+                            <form method="POST" action="{{ route('logout') }}" class="logout-form basis-1/2 md:basis-0">
+                                @csrf
+
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" class="text-center">Logout</a>
+                            </form>
+                        @else
+                            <a href="{{ route('login') }}" class="text-center">Login</a>
+                        @endauth
+                    </div>
+                </div>
             </nav>
         </div>
-
-        <div class="secondary-header">
-            @auth
-                <p>Welcome back, {{ Auth::user()->display_name }}</p>
-
-                <a href="{{ route('profile.edit') }}">Settings</a>
-
-                <form method="POST" action="{{ route('logout') }}" class="logout-form">
-                    @csrf
-
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
-                </form>
-            @else
-                <a href="{{ route('login') }}">Login</a>
-            @endauth
-        </div>
     </header>
-    <div class="container">
     {{ $slot }}
-    </div>
     <footer>
         <div>
             <a href="#">
