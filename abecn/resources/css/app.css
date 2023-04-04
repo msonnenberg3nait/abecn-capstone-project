@@ -9,7 +9,7 @@
 }
 
 /* fonts */
-p {
+body {
     font-family: 'Montserrat', sans-serif;
     font-size: 19.2px;
 }
@@ -30,6 +30,10 @@ h1,
 h2,
 h3 {
     font-family: 'Bebas Neue', cursive;
+}
+
+.event-text p:first-of-type {
+    font-weight: bolder;
 }
 
 /* header */
@@ -131,6 +135,19 @@ main {
 
 .inner-container {
     padding: 1rem 0.75rem;
+}
+
+.home-btn {
+    background-color:var(--light);
+}
+
+.sponsors {
+    background-color:var(--light);
+}
+
+/* footer */
+footer {
+    background-color: var(--dark);
 }
 
 /* media queries */
