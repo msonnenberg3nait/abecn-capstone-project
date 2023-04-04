@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('pm_type')->nullable();
             $table->string('pm_last_four', 4)->nullable();
             $table->timestamp('trial_ends_at')->nullable();
+            $table->string('line1', 100)->nullable();
+            $table->string('line2', 100)->nullable();
+            $table->string('state', 20)->nullable();
+            $table->string('country', 20)->nullable();
+            $table->char('postal_code', 6)->nullable();
         });
     }
 

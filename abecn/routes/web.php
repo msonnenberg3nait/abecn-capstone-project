@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Stripe\PaymentController;
+use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
 use App\Models\User;
 use App\Models\Sponsor;
 use Illuminate\Support\Facades\Route;
@@ -24,9 +27,11 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', [AdminController::class, 'edit'])->middleware('auth')->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -51,7 +56,10 @@ Route::get('sponsors/{sponsor:company_name}', function (Sponsor $sponsor) {
 
 Route::view('/about', 'about');
 
-Route::view('/membership', 'membership');
+Route::get('/membership', [MembershipController::class, 'index'])->name('membership');//middleware(['auth', 'verified']);
+
+Route::get('/register', [PaymentController::class, 'index'])->name('register');
+Route::post('/register', [PaymentController::class, 'store'])->name('register');
 
 Route::view('/committees', 'committees');
 

@@ -17,6 +17,10 @@ class SponsorFactory extends Factory
      */
     public function definition(): array
     {
+        $width = 400;
+        $height = 200;
+        $projectWidth=400;
+        $projectHeight=200;
         return [
             'company_name' => fake()->company(),
             'company_contact' => fake()->name(),
@@ -25,9 +29,9 @@ class SponsorFactory extends Factory
             'postal' => fake()->postcode(),
             'email' => fake()->companyEmail(),
             'phone' => fake()->phoneNumber(),
-            'img' => fake()->imageUrl($width=400, $height=200),
+            'img' => fake()->imageUrl($width, $height),
             'bio' => fake()->paragraph(2),
-            'project_img' => fake()->imageUrl($projectWidth=400, $projectHeight=200)
+            'project_img' => fake()->imageUrl(3, $projectWidth, $projectHeight)
         ];
     }
 }
