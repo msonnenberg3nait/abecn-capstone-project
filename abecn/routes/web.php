@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
 use App\Models\User;
 use App\Models\Sponsor;
 use Illuminate\Support\Facades\Route;
@@ -24,9 +25,11 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', [AdminController::class, 'edit'])->middleware('auth')->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
