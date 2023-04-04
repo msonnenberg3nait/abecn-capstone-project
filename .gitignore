@@ -25,3 +25,4 @@ abecn/public/.htaccess
 abecn/config/logging.php
 abecn/config/auth.php
 abecn/composer.lock
+.DS_Store
