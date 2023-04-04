@@ -10,36 +10,10 @@
         </div>
         <div class="sponsors-wrapper">
             <section class="sponsor-card">
-                <h3>Company Name</h3>
-                <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
-            </section>
-            <section class="sponsor-card">
-                <h3>Company Name</h3>
-                <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
-            </section>
-            <section class="sponsor-card">
-                <h3>Company Name</h3>
-                <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
-            </section>
-            <section class="sponsor-card">
-                <h3>Company Name</h3>
-                <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
-            </section>
-            <section class="sponsor-card">
-                <h3>Company Name</h3>
-                <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
-            </section>
-            <section class="sponsor-card">
-                <h3>Company Name</h3>
-                <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
-            </section>
-            <section class="sponsor-card">
-                <h3>Company Name</h3>
-                <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
-            </section>
-            <section class="sponsor-card">
-                <h3>Company Name</h3>
-                <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
+                @foreach ($sponsors as $sponsor)
+                    <a href="/sponsors/{{ $sponsor->company_name }}"><h3>{{ $sponsor->company_name }}</h3></a>
+                    <img src="{{ $sponsor->img }}" alt="Photo">
+                @endforeach
             </section>
         </div>
     </div>
