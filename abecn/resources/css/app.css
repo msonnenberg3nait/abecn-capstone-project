@@ -22,7 +22,7 @@ body svg {
     display: inline-block;
 }
 
-body a {
+body nav a {
     text-decoration: none;
     display: inline-block;
     color: white;
@@ -105,6 +105,16 @@ nav svg {
 main {
     margin-top: -89px; /* header height still takes up space at the top of the page, even though it is "stuck" to the bottom. This fixes it. */
     padding: 1rem 0.75rem;
+}
+
+.plans a {
+    text-decoration: underline;
+    color: blue;
+}
+
+.pricing-amount:hover {
+    background-color: #4c51bf;
+    color: #fff;
 }
 
 

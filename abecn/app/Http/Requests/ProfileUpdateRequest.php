@@ -18,6 +18,7 @@ class ProfileUpdateRequest extends FormRequest
         return [
             'first_name' => ['string', 'min:1', 'max:30'],
             'last_name' => ['string', 'min:2', 'max:30'],
+            'name' => ['string', 'min:2', 'max:80'],
             'display_name' => ['string', 'min:2', 'max:30', Rule::unique(User::class)->ignore($this->user()->id)],
             'organization' => ['nullable', 'string', 'max:60'],
             'specialty' => ['nullable', 'string', 'max:60'],
@@ -25,8 +26,13 @@ class ProfileUpdateRequest extends FormRequest
             'phone' => ['nullable', 'digits:10', 'integer', 'numeric'],
             'primary_address' => ['nullable', 'string', 'min:3', 'max:60'],
             'secondary_address' => ['nullable', 'string', 'min:3', 'max:60'],
+            'line1' => ['nullable', 'string', 'min:3', 'max:60'],
+            'line2' => ['nullable', 'string', 'min:3', 'max:60'],
             'city' => ['nullable', 'string', 'min:3', 'max:20'],
+            'state' => ['nullable', 'string', 'min:2', 'max:2'],
+            'country' => ['nullable', 'string', 'min:2', 'max:2'],
             'postal' => ['nullable', 'regex:/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/', 'max:6'],
+            'postal_code' => ['nullable', 'regex:/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/', 'max:6'],
         ];
     }
 }

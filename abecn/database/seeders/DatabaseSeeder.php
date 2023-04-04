@@ -18,15 +18,33 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $group = Group::factory(3)->create();
-        $membership = Membership::factory(2)->create();
+
+        $individual = Membership::create([
+            'name' => 'Individual',
+            'slug' => 'individual',
+            'stripe_name' => 'individual',
+            'stripe_id' => 'price_1MqU6QEe4PK41pzAAfwvDtWz',
+            'price' => 75,
+            'abbreviation' => '/year',
+        ]);
+
+        $student = Membership::create([
+            'name' => 'Student',
+            'slug' => 'student',
+            'stripe_name' => 'student',
+            'stripe_id' => 'price_1MqU6wEe4PK41pzA2LgxD7yl',
+            'price' => 25,
+            'abbreviation' => '/year',
+        ]);
+
         User::factory(5)->state(new Sequence(
             [
                 'group_id' => $group->first()->id,
-                'membership_id' => $membership->first()->id
+                'membership_id' => $individual
             ],
             [
                 'group_id' => $group->last()->id,
-                'membership_id' => $membership->last()->id
+                'membership_id' => $student
             ],
         ))->create();
 
