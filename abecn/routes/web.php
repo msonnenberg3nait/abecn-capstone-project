@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Stripe\PaymentController;
+use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Models\User;
@@ -54,7 +56,10 @@ Route::get('sponsors/{sponsor:company_name}', function (Sponsor $sponsor) {
 
 Route::view('/about', 'about');
 
-Route::view('/membership', 'membership');
+Route::get('/membership', [MembershipController::class, 'index'])->name('membership');//middleware(['auth', 'verified']);
+
+Route::get('/register', [PaymentController::class, 'index'])->name('register');
+Route::post('/register', [PaymentController::class, 'store'])->name('register');
 
 Route::view('/committees', 'committees');
 
