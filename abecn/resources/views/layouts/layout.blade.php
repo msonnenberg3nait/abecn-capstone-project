@@ -122,7 +122,7 @@
     </header>
     {{ $slot }}
     <footer>
-        <div>
+        <div class="inner-container">
             <a href="#">
                 <img src="{{ asset('img/ABECN_PNG.webp') }}" alt="ABECN logo">
             </a>

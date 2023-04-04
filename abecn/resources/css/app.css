@@ -4,28 +4,44 @@
 
 :root {
     --dark: #102F58;
-    --light: #1E4C86;
+    --medium: #1E4C86;
+    --light: #6AA8C3;
 }
 
+/* fonts */
 body {
     font-family: 'Montserrat', sans-serif;
+    font-size: 19.2px;
 }
 
+h1 {
+    font-size: 47.78px;
+}
+
+h2 {
+    font-size: 33.18px;
+}
+
+h3 {
+    font-size: 27.65px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.event-text p:first-of-type {
+    font-weight: bolder;
+}
+
+/* header */
 header {
     background-color: var(--dark);
     position: sticky;
     top: calc(100vh - 89px);
     z-index: 1;
-}
-
-body svg {
-    display: inline-block;
-}
-
-body a {
-    text-decoration: none;
-    display: inline-block;
-    color: white;
 }
 
 .logout-form {
@@ -76,7 +92,7 @@ body a {
 
 nav {
     position: absolute;
-    background-color: var(--light);
+    background-color: var(--medium);
     top: -571%;
     width: 100%;
 }
@@ -99,15 +115,42 @@ nav svg {
 
 .secondary-header a {
     background-color: var(--dark);
-    border-bottom: 4px solid var(--light);
+    border-bottom: 4px solid var(--medium);
+}
+
+/* body */
+body svg {
+    display: inline-block;
+}
+
+body a {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
 }
 
 main {
     margin-top: -89px; /* header height still takes up space at the top of the page, even though it is "stuck" to the bottom. This fixes it. */
+}
+
+.inner-container {
     padding: 1rem 0.75rem;
 }
 
+.home-btn {
+    background-color:var(--light);
+}
 
+.sponsors {
+    background-color:var(--light);
+}
+
+/* footer */
+footer {
+    background-color: var(--dark);
+}
+
+/* media queries */
 @media screen and (min-width: 768px) {
     header {
         position: unset;
@@ -120,8 +163,7 @@ main {
         display: none;
     }
 
-    .outer-nav,
-    main {
+    .outer-nav {
         padding: 0.75rem 1.25rem;
     }
 
@@ -163,7 +205,7 @@ main {
         position: absolute;
         max-height: 0;
         overflow: hidden;
-        background-color: var(--light);
+        background-color: var(--medium);
     }
 
     nav > ul > li:hover > ul {
@@ -191,7 +233,7 @@ main {
         width: 100%;
         top: 0;
         right: 0;
-        background-color: var(--light);
+        background-color: var(--medium);
         color: white;
         display: flex;
         justify-content: right;
@@ -201,7 +243,7 @@ main {
     .secondary-header a {
         padding: 0.75rem 0;
         width: unset;
-        background-color: var(--light);
+        background-color: var(--medium);
         border-bottom: 0;
     }
 
