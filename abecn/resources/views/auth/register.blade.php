@@ -105,7 +105,11 @@
 
                         {{-- Payment Method --}}
                         <input type="hidden" name="payment-method" id="payment-method">
-                        
+                        <div>
+                            <x-input-label for="name" :value="__('Cardholder Name')" />
+                            <x-text-input type="text" class="block mt-1 w-full" name="name" id="name" :value="old('name')" required autofocus />
+                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        </div>
                         <div>
                             <x-input-label for="line1" :value="__('Address Line 1')" />
                             <x-text-input type="text" class="block mt-1 w-full" name="line1" id="line1" :value="old('line1')" />
