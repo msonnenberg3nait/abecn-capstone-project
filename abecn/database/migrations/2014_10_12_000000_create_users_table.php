@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->foreignId('membership_id')->default(2); // individual
             $table->string('first_name', 30);
             $table->string('last_name', 30);
-            $table->string('name', 80)->unique();
             $table->string('display_name', 30)->unique();
             $table->string('password');
             $table->date('dob');
@@ -28,11 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 40)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->char('phone', 11)->nullable();
-            $table->string('primary_address', 100)->nullable();
-            $table->string('secondary_address', 100)->nullable();
-            $table->string('city', 40)->nullable();
-            $table->char('postal', 6)->nullable();
-            $table->boolean('active_yn')->default(1); // active
+            $table->string('pcity', 40)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
