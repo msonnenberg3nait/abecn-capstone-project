@@ -58,7 +58,7 @@ class RegisteredUserController extends Controller
             $lastName = $request->lastname,
             'first_name' => $firstName,
             'last_name' => $lastName,
-            'name' => $firstName .' ' .$lastName,
+            'name' => $request->name,
             'display_name' => $request->displayname,
             'password' => Hash::make($request->password),
             'dob' => $request->birthday,
