@@ -67,24 +67,9 @@
                             <x-input-error :messages="$errors->get('phone')" class="mt-2" />
                         </div>
                         <div>
-                            <x-input-label for="address" :value="__('Address Line 1')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="address" id="address" :value="old('address')" />
-                            <x-input-error :messages="$errors->get('address')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="address2" :value="__('Address Line 2')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="address2" id="address2" :value="old('address2')" />
-                            <x-input-error :messages="$errors->get('address2')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="city" :value="__('City')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="city" id="city" :value="old('city')" />
-                            <x-input-error :messages="$errors->get('city')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="postal" :value="__('Postal Code')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="postal" id="postal" :value="old('postal')" />
-                            <x-input-error :messages="$errors->get('postal')" class="mt-2" />
+                            <x-input-label for="pcity" :value="__('City')" />
+                            <x-text-input type="text" class="block mt-1 w-full" name="pcity" id="pcity" :value="old('pcity')" />
+                            <x-input-error :messages="$errors->get('pcity')" class="mt-2" />
                         </div>
                     </div>
 
