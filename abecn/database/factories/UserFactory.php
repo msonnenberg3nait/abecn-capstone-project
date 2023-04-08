@@ -19,11 +19,16 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $firstName = fake()->firstName();
+        $lastName = fake()->lastName();
+        $primaryAddress = fake()->streetAddress();
+        $secondaryAddress = fake()->streetAddress();
         return [
             'group_id' => Group::factory(),
-            'membership_id' => Membership::factory(),
-            'first_name' => fake()->firstName(),
-            'last_name' => fake()->lastName(),
+            'membership_id' => Membership::factory(),           
+            'first_name' => $firstName,           
+            'last_name' => $lastName,
+            'name' => $firstName.' '.$lastName,
             'display_name' => fake()->userName(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'dob' => fake()->date(),
@@ -31,9 +36,13 @@ class UserFactory extends Factory
             'specialty' => fake()->jobTitle(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'primary_address' => fake()->address(),
-            'secondary_address' => fake()->address(),
+            'primary_address' => $primaryAddress,
+            'secondary_address' => $secondaryAddress,
+            'line1' => $primaryAddress,
+            'line2' => $secondaryAddress,
             'city' => fake()->city(),
+            'state' => fake()->stateAbbr(),
+            'country' => fake()->countryCode(),
             'active_yn' => fake()->boolean(),
             'remember_token' => Str::random(10),
         ];

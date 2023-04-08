@@ -50,6 +50,17 @@ header {
     z-index: 1;
 }
 
+
+body svg {
+    display: inline-block;
+}
+
+body nav a {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+}
+
 .logout-form {
     margin: 0;
 }

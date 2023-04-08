@@ -27,11 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 40)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->char('phone', 11)->nullable();
-            $table->string('primary_address', 100)->nullable();
-            $table->string('secondary_address', 100)->nullable();
-            $table->string('city', 20)->nullable();
-            $table->char('postal', 6)->nullable();
-            $table->boolean('active_yn')->default(1); // active
+            $table->string('pcity', 40)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
