@@ -66,4 +66,5 @@ class User extends Authenticatable
     public function membership() {
         return $this->belongsTo(Membership::class);
     }
+
 }

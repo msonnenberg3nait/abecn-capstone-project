@@ -19,8 +19,23 @@
     <div class="bg-slate-100">
         @include('layouts.navigation')
 
-        <!-- Page Content -->
-        {{ $slot }}
-    </div>
-</body>
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
+
+            {{-- Alerts --}}
+            <div class="mx-6 mt-6">
+                <x-alerts.main />
+            </div>
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
+    </body>
 </html>

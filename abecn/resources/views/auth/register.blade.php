@@ -9,7 +9,7 @@
                 </div>
 
 
-                <form id="payment-form" method="POST" action="{{ route('register') }}" x-data="{ formStep: 1 }" class="mt-6 mx-0">
+                <form method="POST" action="{{ route('register') }}" x-data="{ formStep: 1 }" class="mt-6 mx-0">
                     @csrf
 
 
@@ -73,71 +73,11 @@
                         </div>
                     </div>
 
-                    <div x-cloak x-show="formStep === 3" class="space-y-6">
+
+
+                    <!-- <div x-cloak x-show="formStep === 2" class="space-y-6">
                         <h2>Billing Information<h2/>
-                        <!-- <div>
-                            <x-input-label for="firstname" :value="__('First Name')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="firstname" id="firstname" :value="old('firstname')" required autofocus />
-                            <x-input-error :messages="$errors->get('firstname')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="lastname" :value="__('Last Name')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="lastname" id="lastname" :value="old('lastname')" required />
-                            <x-input-error :messages="$errors->get('lastname')" class="mt-2" />
-                        </div> -->
-                        {{-- Plan --}}
-                        <input type="hidden" name="plan" id="plan" value="{{ request('plan') }}">
-
-                        {{-- Payment Method --}}
-                        <input type="hidden" name="payment-method" id="payment-method">
-                        <div>
-                            <x-input-label for="name" :value="__('Cardholder Name')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="name" id="name" :value="old('name')" required autofocus />
-                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="line1" :value="__('Address Line 1')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="line1" id="line1" :value="old('line1')" />
-                            <x-input-error :messages="$errors->get('line1')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="line2" :value="__('Address Line 2')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="line2" id="line2" :value="old('line2')" />
-                            <x-input-error :messages="$errors->get('line2')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="city" :value="__('City')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="city" id="city" :value="old('city')" />
-                            <x-input-error :messages="$errors->get('city')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="province" :value="__('Province')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="province" id="province" :value="old('province')" />
-                            <x-input-error :messages="$errors->get('province')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="country" :value="__('Country')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="country" id="country" :value="old('country')" />
-                            <x-input-error :messages="$errors->get('country')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="postal_code" :value="__('Postal Code')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="postal" id="postal_code" :value="old('postal_code')" />
-                            <x-input-error :messages="$errors->get('postal_code')" class="mt-2" />
-                        </div>
-
-                        <div>
-                            <x-input-label for="card_no" :value="__('Card Number')" />
-                            <div id="card-element" class="block mt-1 w-full"></div>
-                        </div>
-
-                        <div id="card-errors" class="block mt-1 w-full"></div>
-
-                        <x-primary-button id="card-button" data-secret=" $intent->client_secret" class="ml-4" x-cloak x-show="formStep === 3">
-                            {{ __('Pay Now') }}
-                        </x-primary-button>
-                    </div>
-
+                    </div> -->
                     <div class="flex items-center justify-around mt-4">
                         <x-secondary-button
                         x-cloak
@@ -155,14 +95,14 @@
 
                         <x-secondary-button
                         x-cloak
-                        x-show="formStep < 3"
+                        x-show="formStep < 2"
                         @click="formStep += 1"
                         type="button"
                         >
                         Next Step
                         </x-secondary-button>
 
-                        <x-primary-button class="ml-4" x-cloak x-show="formStep === 3">
+                        <x-primary-button class="ml-4" x-cloak x-show="formStep === 2">
                             {{ __('Register') }}
                         </x-primary-button>
                     </div>
