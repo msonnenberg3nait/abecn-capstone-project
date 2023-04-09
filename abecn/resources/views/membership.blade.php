@@ -60,7 +60,7 @@
                             <li>Your voice will be heard</li>
                             </ul>
                             <div class="mt-6 py-4">
-                            <a href="{{ route('register', ['membership' => $membership->stripeName()]) }}" class="px-6 py-3 bg-indigo-600 text-xl text-white py-2 px-6 rounded hover:bg-indigo-700 transition-colors duration-300">Become A Member</a>
+                            <a href="{{ route('payments', ['membership' => $membership->stripeName()]) }}" class="px-6 py-3 bg-indigo-600 text-xl text-white py-2 px-6 rounded hover:bg-indigo-700 transition-colors duration-300">Become A Member</a>
                             
                             </div>
                         </div>

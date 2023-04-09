@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Dashboard\BillingController;
 use App\Http\Controllers\Stripe\PaymentController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\ProfileController;
@@ -63,8 +65,12 @@ Route::view('/about', 'about');
 
 Route::get('/membership', [MembershipController::class, 'index'])->name('membership');//middleware(['auth', 'verified']);
 
-Route::get('/register', [PaymentController::class, 'index'])->name('register');
-Route::post('/register', [PaymentController::class, 'store'])->name('register');
+Route::get('/payment', [PaymentController::class, 'index'])->name('payments');
+Route::post('/payment', [PaymentController::class, 'store'])->name('payments.store');
+
+Route::group(['prefix' => 'dashboard'], function () {
+    Route::get('/billing',  [BillingController::class, 'index'])->name('billing');
+});
 
 Route::view('/committees', 'committees');
 

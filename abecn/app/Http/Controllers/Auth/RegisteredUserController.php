@@ -42,19 +42,20 @@ class RegisteredUserController extends Controller
             'specialty' => ['nullable', 'string', 'max:60'],
             'email' => ['required', 'string', 'email', 'max:40', 'unique:'.User::class],
             'phone' => ['nullable', 'digits:10', 'integer', 'numeric'],
-            'pcity' => ['nullable', 'string', 'min:3', 'max:40'],
             'line1' => ['nullable', 'string', 'min:3', 'max:60'],
             'line2' => ['nullable', 'string', 'min:3', 'max:60'],
+            'pcity' => ['nullable', 'string', 'min:3', 'max:40'],
+            'city' => ['nullable', 'string', 'min:3', 'max:40'],
             'province' => ['nullable', 'string', 'min:2', 'max:2'],
             'country' => ['nullable', 'string', 'min:2', 'max:2'],
             'postal_code' => ['nullable', 'regex:/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/', 'max:6'],
+            'payment_method' => ['required_if:payment_option,stripe'],
+            'card_holder_name' => ['required_if:payment_option,stripe', 'string', 'max:80'],
         ]);
-
+    
         $user = User::create([
-            $firstName = $request->firstname,
-            $lastName = $request->lastname,
-            'first_name' => $firstName,
-            'last_name' => $lastName,
+            'first_name' => $request->firstname,
+            'last_name' => $request->lastname,
             'name' => $request->name,
             'display_name' => $request->displayname,
             'password' => Hash::make($request->password),
@@ -63,9 +64,9 @@ class RegisteredUserController extends Controller
             'specialty' => $request->specialty,
             'email' => $request->email,
             'phone' => $request->phone,
-            'pcity' => $request->pcity,
             'line1' => $request->line1,
             'line2' => $request->line2,
+            'pcity' => $request->pcity,
             'city' => $request->city,
             'state' => $request->province,
             'country' => $request->country,
@@ -73,12 +74,14 @@ class RegisteredUserController extends Controller
             'remember_token' => Str::random(10),
         ]);
 
-        $user->createAsStripeCustomer();
+            $user->createAsStripeCustomer();
 
+    
         event(new Registered($user));
-
+    
+        //Login the user
         Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+    
+        return redirect('/membership');
     }
 }
