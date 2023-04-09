@@ -69,7 +69,7 @@
         <section class="sponsors mb-9 py-8">
             <div class="inner-container">
                 <h2>Our Sponsors</h2>
-                <div class="sponsors-slider">
+                <div class="sponsors-slider inner-container">
                     <div class="slide-track">
                         <div class="slide inline-block">
                             <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
