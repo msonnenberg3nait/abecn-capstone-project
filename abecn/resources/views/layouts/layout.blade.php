@@ -14,7 +14,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -121,25 +121,51 @@
         </div>
     </header>
     {{ $slot }}
-    <footer>
+    <footer class="py-10 pb-40">
         <div class="inner-container">
-            <a href="#">
-                <img src="{{ asset('img/ABECN_PNG.webp') }}" alt="ABECN logo">
-            </a>
-            <ul>
-                <li><a href="#">PRIVACY</a></li>
-                <li><a href="#">COPYRIGHT</a></li>
-                <li><a href="#">SITEMAP</a></li>
-                <li><a href="#">CONTACT US</a></li>
-            </ul>
-            <form action="#">
-                <h3>SIGN UP FOR OUR NEWSLETTER</h3>
-                <label for="name">Full Name</label>
-                <input type="text" name="name">
-                <label for="email">Email</label>
-                <input type="email" name="email">
-                <input type="submit" name="submit" value="SIGN UP">
-            </form>
+            <div class="flex justify-between align-center">
+                <a href="#">
+                    <img src="{{ asset('img/ABECN_PNG.webp') }}" alt="ABECN logo">
+                </a>
+                <ul class="footer-links">
+                    <li class="mb-2"><a href="#">PRIVACY</a></li>
+                    <li class="mb-2"><a href="#">COPYRIGHT</a></li>
+                    <li class="mb-2"><a href="#">SITEMAP</a></li>
+                    <li class="mb-2"><a href="#">CONTACT US</a></li>
+                </ul>
+            </div>
+            <div class="socials-newsletter">
+                <div class="social-icons flex justify-between my-8">
+                    <a href="#">
+                        <img src="{{ asset('img/linkedin-icon.png') }}" class="w-3/4" alt="ABECN logo">
+                    </a>
+                    <a href="#">
+                        <img src="{{ asset('img/facebook-icon.png') }}" class="w-3/4" alt="ABECN logo">
+                    </a>
+                    <a href="#">
+                        <img src="{{ asset('img/instagram-icon.png') }}" class="w-3/4" alt="ABECN logo">
+                    </a>
+                    <a href="#">
+                        <img src="{{ asset('img/twitter-icon.png') }}" class="w-3/4" alt="ABECN logo">
+                    </a>
+                </div>
+                <form class="newsletter px-4 py-6 rounded-lg" action="#">
+                    <h3>SIGN UP FOR OUR NEWSLETTER</h3>
+                    <div class="newsletter-flex">
+                        <div class="mb-4">
+                            <label class="block" for="name">Full Name</label>
+                            <input class="w-full border-none" type="text" name="name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block" for="email">Email</label>
+                            <input class="w-full border-none" type="email" name="email">
+                        </div>
+                        <div class="mb-4">
+                            <input class="footer-btn" type="submit" name="submit" value="Sign up">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </footer>
 

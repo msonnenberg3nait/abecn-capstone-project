@@ -33,7 +33,12 @@ Route::get('/', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard', [AdminController::class, 'edit'])->middleware('auth')->name('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'edit'])->name('dashboard');
+    Route::patch('/dashboard/{user}', [AdminController::class, 'update'])->name('group.update');
+});
+
+// Route::patch('/group', [AdminController::class], 'update')->middleware('auth')->name('group.update');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

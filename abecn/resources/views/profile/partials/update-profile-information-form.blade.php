@@ -75,6 +75,7 @@
                     <x-input-label for="postal" :value="__('Postal')" />
                     <x-text-input id="postal" name="postal" type="text" class="mt-1 block w-full" :value="old('postal', $user->postal)" />
                     <x-input-error class="mt-2" :messages="$errors->get('postal')" />
+
                 </div>
             </div>
         </div>
