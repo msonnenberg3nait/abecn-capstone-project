@@ -21,12 +21,12 @@ class UserFactory extends Factory
     {
         $firstName = fake()->firstName();
         $lastName = fake()->lastName();
-        $primaryAddress = fake()->streetAddress();
-        $secondaryAddress = fake()->streetAddress();
+        // $primaryAddress = fake()->streetAddress();
+        // $secondaryAddress = fake()->streetAddress();
         return [
             'group_id' => Group::factory(),
-            'membership_id' => Membership::factory(),           
-            'first_name' => $firstName,           
+            'membership_id' => Membership::factory(),
+            'first_name' => $firstName,
             'last_name' => $lastName,
             'name' => $firstName.' '.$lastName,
             'display_name' => fake()->userName(),
@@ -36,15 +36,8 @@ class UserFactory extends Factory
             'specialty' => fake()->jobTitle(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'primary_address' => $primaryAddress,
-            'secondary_address' => $secondaryAddress,
-            'line1' => $primaryAddress,
-            'line2' => $secondaryAddress,
-            'city' => fake()->city(),
-            'state' => fake()->stateAbbr(),
-            'country' => fake()->countryCode(),
-            'active_yn' => fake()->boolean(),
-            'remember_token' => Str::random(10),
+            'pcity' => fake()->city(),
+            // 'remember_token' => Str::random(10),
         ];
     }
 
