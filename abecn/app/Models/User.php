@@ -40,7 +40,6 @@ class User extends Authenticatable
         'country',
         'postal',
         'postal_code',
-        'active_yn',
     ];
 
     /**
@@ -69,4 +68,5 @@ class User extends Authenticatable
     public function membership() {
         return $this->belongsTo(Membership::class);
     }
+
 }
