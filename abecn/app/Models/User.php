@@ -23,7 +23,6 @@ class User extends Authenticatable
         'membership_id',
         'first_name',
         'last_name',
-        'name',
         'display_name',
         'password',
         'dob',
@@ -31,16 +30,14 @@ class User extends Authenticatable
         'specialty',
         'email',
         'phone',
-        'primary_address',
-        'secondary_address',
+        'pcity',
         'line1',
         'line2',
+        'name',
         'city',
         'state',
         'country',
-        'postal',
         'postal_code',
-        'active_yn',
     ];
 
     /**
@@ -69,4 +66,5 @@ class User extends Authenticatable
     public function membership() {
         return $this->belongsTo(Membership::class);
     }
+
 }

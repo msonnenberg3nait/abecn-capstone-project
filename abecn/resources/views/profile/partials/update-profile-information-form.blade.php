@@ -67,14 +67,15 @@
                     <x-input-error class="mt-2" :messages="$errors->get('secondary_address')" />
                 </div>
                 <div>
-                    <x-input-label for="city" :value="__('City')" />
-                    <x-text-input id="city" name="city" type="text" class="mt-1 block w-full" :value="old('city', $user->city)" />
-                    <x-input-error class="mt-2" :messages="$errors->get('city')" />
+                    <x-input-label for="pcity" :value="__('City')" />
+                    <x-text-input id="pcity" name="pcity" type="text" class="mt-1 block w-full" :value="old('pcity', $user->pcity)" />
+                    <x-input-error class="mt-2" :messages="$errors->get('pcity')" />
                 </div>
                 <div>
                     <x-input-label for="postal" :value="__('Postal')" />
                     <x-text-input id="postal" name="postal" type="text" class="mt-1 block w-full" :value="old('postal', $user->postal)" />
                     <x-input-error class="mt-2" :messages="$errors->get('postal')" />
+
                 </div>
             </div>
         </div>

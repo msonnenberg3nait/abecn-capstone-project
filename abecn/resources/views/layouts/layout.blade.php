@@ -50,7 +50,7 @@
                 <ul>
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li>
-                        <a href="/membership">
+                        <a href="/register">
                             Membership Info
                         </a>
                         <ul class="member-info-dropdown">
@@ -168,5 +168,7 @@
             </div>
         </div>
     </footer>
+
+    @stack('scripts')
 </body>
 </html>
