@@ -45,7 +45,7 @@ class RegisteredUserController extends Controller
             'line2' => ['nullable', 'string', 'min:3', 'max:60'],
             'pcity' => ['nullable', 'string', 'min:3', 'max:40'],
             'city' => ['nullable', 'string', 'min:3', 'max:40'],
-            'province' => ['nullable', 'string', 'min:2', 'max:2'],
+            'state' => ['nullable', 'string', 'min:2', 'max:2'],
             'country' => ['nullable', 'string', 'min:2', 'max:2'],
             'postal_code' => ['nullable', 'regex:/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/', 'min:6', 'max:7'],
             'payment_method' => ['required_if:payment_option,stripe'],
