@@ -15,6 +15,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 19.2px;
     color: var(--darkgrey);
+    line-height: 28.8px;
 }
 
 h1 {
@@ -34,7 +35,8 @@ h3 {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: 'Bebas Neue', cursive;
 }
 
@@ -278,6 +280,17 @@ hr {
     gap: 4rem;
 }
 
+/******** member directory page ******/
+.member-directory-banner {
+    background-image: url('../../public/img/audience.jpg');
+}
+
+.member-card {
+    gap: 2rem;
+    padding: 1.5rem;
+    max-width: 34rem;
+}
+
 /************** footer **************/
 footer {
     background-color: var(--medium);
@@ -304,10 +317,25 @@ footer {
     border: 1px solid transparent;
 }
 
-/* media queries */
+/********** media queries ************/
 @media screen and (min-width: 590px){
+    /************ membership info **********/
     .membership {
         margin-bottom: 30rem;
+    }
+
+    /************ member directory **********/
+    .member-card {
+        display: flex;
+        text-align: left;
+        align-items: center;
+    }
+
+    .members {
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
     }
 }
 
@@ -442,7 +470,7 @@ footer {
         width: calc(100vw/2);
     }
 
-    /* membership info */
+    /********** membership info page *********/
     .membership {
         display: flex;
         align-items: center;
@@ -456,6 +484,11 @@ footer {
         padding-top: 0;
     }
 
+    /************** sponsors page **********/
+    .board-of-directors {
+        display: flex;
+    }
+    
     /************ footer ***********/
     footer img {
         width: 60%;
