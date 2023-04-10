@@ -67,7 +67,7 @@ class RegisteredUserController extends Controller
             'line2' => $request->line2,
             'pcity' => $request->pcity,
             'city' => $request->city,
-            'state' => $request->province,
+            'state' => $request->state,
             'country' => $request->country,
             'postal_code' => $request->postal_code,
             'remember_token' => Str::random(10),

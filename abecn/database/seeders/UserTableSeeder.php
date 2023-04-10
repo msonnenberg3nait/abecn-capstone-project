@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
     {
         $group = Group::factory(3)->create();
 
-        User::factory(5)->state(new Sequence(
+        User::factory(30)->state(new Sequence(
             [
                 'group_id' => $group->first()->id,
             ],
