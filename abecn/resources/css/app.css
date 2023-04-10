@@ -193,7 +193,7 @@ hr {
     color: var(--medium);
 }
 
-/************** sponsors *************/
+/************** our sponsors *************/
 .sponsors {
     background-color:var(--light);
 }
@@ -257,6 +257,25 @@ hr {
 
 .membership-text {
     padding-top: 3rem;
+}
+
+/*********** sponsors page ***********/
+.sponsors-banner {
+    background-image: url('../../public/img/building-edge.jpg');
+}
+
+.sponsor-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sponsor-card div {
+    margin-bottom: 48px;
+}
+
+.search-filter-wrapper {
+    gap: 4rem;
 }
 
 /************** footer **************/
@@ -437,7 +456,7 @@ footer {
         padding-top: 0;
     }
 
-    /* footer */
+    /************ footer ***********/
     footer img {
         width: 60%;
     }
