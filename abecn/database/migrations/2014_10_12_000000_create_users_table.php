@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->foreignId('membership_id')->default(2); // individual
             $table->string('first_name', 30);
             $table->string('last_name', 30);
+            $table->string('profile_img')->nullable();
             $table->string('display_name', 30)->unique();
             $table->string('password');
             $table->date('dob');

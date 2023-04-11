@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Cashier\Billable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -18,8 +19,10 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'users';
     protected $fillable = [
         'group_id',
+        'profile_img',
         'membership_id',
         'first_name',
         'last_name',

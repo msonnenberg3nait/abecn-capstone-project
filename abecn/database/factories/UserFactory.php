@@ -30,6 +30,7 @@ class UserFactory extends Factory
             'last_name' => $lastName,
             'name' => $firstName.' '.$lastName,
             'display_name' => fake()->userName(),
+            'profile_img' => fake()->imageURL(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'dob' => fake()->date(),
             'organization' => fake()->company(),
