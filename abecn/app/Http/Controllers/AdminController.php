@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -29,6 +28,11 @@ class AdminController extends Controller
 
     public function update(Request $request, $user)
     {
+        // Check if the user has group_id = 1 (Admin)
+        if (Auth::user()->group_id !== 1) {
+            abort('403');
+        }
+
         $user = User::find($user);
         $user->group_id = $request->input('group_id');
         $user->save();

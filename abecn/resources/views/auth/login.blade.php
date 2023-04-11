@@ -3,10 +3,10 @@
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
-        <div class="md:px-6 lg:px-8">
+        <div class="px-4 lg:px-5 py-8 login-form">
             <div class="p-4 sm:p-8 bg-white shadow border rounded-lg">
                 <div>
-                    <h2 class="text-lg font-medium text-gray-900">
+                    <h2 class="text-3xl font-medium">
                         {{ __('Login') }}
                     </h2>
                 </div>
