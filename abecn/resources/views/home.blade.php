@@ -7,7 +7,7 @@
                         <h1>Alberta Building Envelope Council North</h1>
                         <p class="font-bold text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
                     </div>
-                    <a href="#" class="light-btn">Become a Member</a>
+                    <a href="/register" class="light-btn">Become a Member</a>
                 </div>
             </div>
         </section>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="flex justify-center">
-                    <a href="#" class="dark-btn">Become a Member</a>
+                    <a href="/register" class="dark-btn">Become a Member</a>
                 </div>
             </div>
         </section>

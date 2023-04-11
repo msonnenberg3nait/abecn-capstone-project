@@ -59,6 +59,14 @@ Route::get('sponsors/{sponsor:company_name}', function (Sponsor $sponsor) {
     ]);
 });
 
+Route::get('/memberdirectory', function () {
+    $user = User::get();
+
+    return view('/memberdirectory', [
+        'users' => $user
+    ]);
+});
+
 
 Route::view('/about', 'about');
 
@@ -76,8 +84,6 @@ Route::view('/committees', 'committees');
 Route::view('/resources', 'resources');
 
 Route::view('/events', 'events');
-
-Route::view('/memberdirectory', 'memberdirectory');
 
 Route::view('/contact', 'contact');
 
