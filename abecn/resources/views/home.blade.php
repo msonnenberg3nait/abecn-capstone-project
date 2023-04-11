@@ -18,15 +18,15 @@
                 <a href="#">About Us</a>
             </div>
             <div class="welcome-img">
-                <img src="{{ asset('img/presentation.png') }}" alt="Silhoutte of presentation">
+                <img src="{{ asset('img/presentation.webp') }}" alt="Silhoutte of presentation">
             </div>
         </section>
         <section class="inner-container events">
             <h2>Latest Events</h2>
             <article>
-                <div class="event justify-between items-center justify-center align-middle mb-6">
+                <div class="event items-center align-middle mb-6">
                     <div class="event-img">
-                        <img src="{{ asset('img/group-work-laptops.jpg') }}" alt="Top view of a group working on a table">
+                        <img src="{{ asset('img/group-work-laptops.webp') }}" alt="Top view of a group working on a table">
                     </div>
                     <div class="event-text">
                         <h3>Title Here</h3>
@@ -38,9 +38,9 @@
                 <hr class="mb-6">
             </article>
             <article>
-                <div class="event justify-between items-center justify-center align-middle mb-6"> 
+                <div class="event items-center align-middle mb-6"> 
                     <div class="event-img">
-                        <img src="{{ asset('img/lecture.jpg') }}" alt="ABECN logo">
+                        <img src="{{ asset('img/lecture.webp') }}" alt="Side view of a lecture">
                     </div>
                     <div class="event-text">
                         <h3>Title Here</h3>
@@ -52,9 +52,9 @@
                 <hr class="mb-6">
             </article>
             <article>
-                <div class="event justify-between items-center justify-center align-middle mb-6">
+                <div class="event items-center align-middle mb-6">
                     <div class="event-img">
-                        <img src="{{ asset('img/men-discussing.jpg') }}" alt="ABECN logo">
+                        <img src="{{ asset('img/men-discussing.webp') }}" alt="Four men discussing">
                     </div>
                     <div class="event-text">
                         <h3>Title Here</h3>
@@ -72,22 +72,22 @@
                 <div class="sponsors-slider inner-container">
                     <div class="slide-track">
                         <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
+                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
                         </div>
                         <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
+                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
                         </div>
                         <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
+                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
                         </div>
                         <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
+                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
                         </div>
                         <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
+                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
                         </div>
                         <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="ABECN logo">
+                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
                         </div>
                     </div>
                 </div>
