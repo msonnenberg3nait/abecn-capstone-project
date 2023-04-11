@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Dashboard\BillingController;
+use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\Stripe\PaymentController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\ProfileController;
@@ -29,18 +30,16 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
+    // Admin dashboard
     Route::get('/dashboard', [AdminController::class, 'edit'])->name('dashboard');
     Route::patch('/dashboard/{user}', [AdminController::class, 'update'])->name('group.update');
-});
 
-// Route::patch('/group', [AdminController::class], 'update')->middleware('auth')->name('group.update');
+    // Admin dashboard - sponsors
+    Route::get('/dashboard/sponsors', [SponsorController::class, 'create'])->name('sponsor.create');
+    Route::post('/dashboard/sponsors', [SponsorController::class, 'store'])->name('sponsor.store');
 
-Route::middleware('auth')->group(function () {
+    // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

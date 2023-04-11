@@ -22,12 +22,6 @@
                         <x-text-input type="text" class="block mb-4 w-full" name="name" id="card-holder-name" :value="old('name')" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
-                    <!-- {{-- Email --}}
-                    <div>
-                        <x-input-label for="email" :value="__('email')" />
-                        <x-text-input type="text" class="block mb-4 w-full" name="name" id="email" :value="old('email')" required autofocus />
-                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
-                    </div> -->
                     {{-- Address --}}
                     <div>
                         <x-input-label for="line1" :value="__('Street, PO Box, or Company name')" />
@@ -48,8 +42,8 @@
                     </div>
 
                     <div>
-                        <x-input-label for="province" :value="__('Province')" />
-                        <x-text-input type="text" class="block mb-4 w-full" name="province" id="province" :value="old('province')" />
+                        <x-input-label for="state" :value="__('Province')" />
+                        <x-text-input type="text" class="block mb-4 w-full" name="state" id="state" :value="old('state')" />
                         <x-input-error :messages="$errors->get('province')" class="mt-2" />
                     </div>
 

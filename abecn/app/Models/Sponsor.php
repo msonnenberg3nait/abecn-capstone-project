@@ -11,8 +11,14 @@ class Sponsor extends Model
     protected $table = 'sponsors';
     protected $fillable = [
         'company_name',
+        'company_contact',
+        'primary_address',
+        'city',
+        'postal',
         'email',
+        'phone',
         'img',
+        'project_img',
         'bio'
     ];
 }

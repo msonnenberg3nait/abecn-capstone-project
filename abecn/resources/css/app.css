@@ -48,7 +48,7 @@ h4 {
 header {
     background-color: var(--dark);
     position: sticky;
-    top: calc(100vh - 89px);
+    top: calc(100vh - 105px);
     z-index: 2;
 }
 
@@ -70,11 +70,6 @@ body nav a {
 .inner-nav {
     padding: 1rem 0.75rem;
     width: 100%;
-}
-
-/* !TESTING PURPOSES */
-.logo img {
-    width: 50%;
 }
 
 .hamburger-menu {
@@ -112,7 +107,7 @@ body nav a {
 nav {
     position: absolute;
     background-color: var(--medium);
-    top: -571%;
+    top: -565%;
     width: 100%;
 }
 
@@ -134,7 +129,7 @@ nav svg:not(.pagination svg) {
 
 .secondary-header a {
     background-color: var(--dark);
-    border-bottom: 4px solid var(--medium);
+    border-bottom: 3px solid var(--medium);
 }
 
 /* body */
@@ -161,7 +156,7 @@ main {
 }
 
 hr {
-    border: 1px solid var(--dark);
+    border: 1px solid lightgrey;
 }
 
 /* buttons */
@@ -186,12 +181,12 @@ hr {
 
 .dark-btn {
     background-color: var(--medium);
-    border: 4px solid transparent;
+    border: 3px solid transparent;
 }
 
 .dark-btn:hover {
     background-color: #FFF;
-    border: 4px solid var(--medium);
+    border: 3px solid var(--medium);
     color: var(--medium);
 }
 
@@ -221,6 +216,11 @@ hr {
 .slide {
     display: flex;
     align-items: center;
+}
+
+.bio-input {
+    min-height: 4rem;
+    max-height: 16rem;
 }
 
 @keyframes scroll {
@@ -492,7 +492,7 @@ footer {
     .board-of-directors {
         display: flex;
     }
-    
+
     /************ footer ***********/
     footer img {
         width: 60%;
@@ -563,6 +563,9 @@ footer {
 
 @media screen and (min-width: 1400px) {
     .outer-nav,
+    .registration-form,
+    .login-form,
+    .forgot-password-form,
     .inner-container {
         max-width: 1400px;
         margin: 0 auto;

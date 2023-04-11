@@ -26,7 +26,6 @@ class UserFactory extends Factory
         $city = fake()->city();
         return [
             'group_id' => Group::factory(),
-            'membership_id' => Membership::factory(),
             'first_name' => $firstName,
             'last_name' => $lastName,
             'name' => $firstName.' '.$lastName,
@@ -37,7 +36,6 @@ class UserFactory extends Factory
             'specialty' => fake()->jobTitle(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-
             'line1' => $primaryAddress,
             'line2' => $secondaryAddress,
             'pcity' => $city,

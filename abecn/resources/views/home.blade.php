@@ -1,7 +1,7 @@
 <x-layout>
     <main>
         <section class="home-banner w-full mb-9" style="height:27rem;">
-            <div class="home-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full;"> 
+            <div class="home-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full;">
                 <div class="banner-text inner-container">
                     <div class="mb-4">
                         <h1>Alberta Building Envelope Council North</h1>
@@ -91,15 +91,9 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="dark-btn">Become a Member</a>
-                <!-- @foreach ($users as $user)
-        
-                    <p><strong>First Name:</strong> {{ $user->first_name }}</p>
-                    <p><strong>Group Name:</strong> {{ $user->group->name }}</p>
-                    <p><strong>Membership Name:</strong> {{ $user->membership->name }}</p>
-                    <br>
-        
-                @endforeach -->
+                <div class="flex justify-center">
+                    <a href="#" class="dark-btn">Become a Member</a>
+                </div>
             </div>
         </section>
     </main>

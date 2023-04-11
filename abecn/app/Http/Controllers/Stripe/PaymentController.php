@@ -24,6 +24,7 @@ class PaymentController extends Controller
         $paymentMethod = $request->input('payment-method');
 
         $user->update([
+            'name'          => $request->name,
             'line1'         => $request->line1,
             'line2'         => $request->line2,
             'city'          => $request->city,
