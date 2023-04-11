@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -34,7 +33,7 @@ class RegisteredUserController extends Controller
         $request->validate([
             'firstname' => ['required', 'string', 'min:1', 'max:30'],
             'lastname' => ['required', 'string', 'min:2', 'max:30'],
-            'name' => ['nullable', 'string', 'max:80'],
+            'name' => [ 'string', 'max:80'],
             'displayname' => ['required', 'string', 'min:2', 'max:30', 'unique:'.User::class.',display_name'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'birthday' => ['required', 'date'],
@@ -46,9 +45,9 @@ class RegisteredUserController extends Controller
             'line2' => ['nullable', 'string', 'min:3', 'max:60'],
             'pcity' => ['nullable', 'string', 'min:3', 'max:40'],
             'city' => ['nullable', 'string', 'min:3', 'max:40'],
-            'province' => ['nullable', 'string', 'min:2', 'max:2'],
+            'state' => ['nullable', 'string', 'min:2', 'max:2'],
             'country' => ['nullable', 'string', 'min:2', 'max:2'],
-            'postal_code' => ['nullable', 'regex:/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/', 'max:6'],
+            'postal_code' => ['nullable', 'regex:/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/', 'min:6', 'max:7'],
             'payment_method' => ['required_if:payment_option,stripe'],
             'card_holder_name' => ['required_if:payment_option,stripe', 'string', 'max:80'],
         ]);
@@ -68,7 +67,7 @@ class RegisteredUserController extends Controller
             'line2' => $request->line2,
             'pcity' => $request->pcity,
             'city' => $request->city,
-            'state' => $request->province,
+            'state' => $request->state,
             'country' => $request->country,
             'postal_code' => $request->postal_code,
             'remember_token' => Str::random(10),
