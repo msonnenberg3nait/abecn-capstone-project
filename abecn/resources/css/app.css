@@ -15,7 +15,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 19.2px;
     color: var(--darkgrey);
-    line-height: 28.8px;
+    line-height: 1.5;
 }
 
 h1 {
@@ -157,7 +157,7 @@ main {
 }
 
 .home-banner {
-    background-image: url('../../public/img/skyscrapers.jpg');
+    background-image: url('../../public/img/skyscrapers.webp');
 }
 
 hr {
@@ -263,7 +263,7 @@ hr {
 
 /*********** sponsors page ***********/
 .sponsors-banner {
-    background-image: url('../../public/img/building-edge.jpg');
+    background-image: url('../../public/img/building-edge.webp');
 }
 
 .sponsor-card {
@@ -282,7 +282,7 @@ hr {
 
 /******** member directory page ******/
 .member-directory-banner {
-    background-image: url('../../public/img/audience.jpg');
+    background-image: url('../../public/img/audience.webp');
 }
 
 .member-card {
@@ -464,6 +464,10 @@ footer {
     .event {
         display: flex;
         gap: 2rem;
+    }
+
+    .event-img {
+        max-width: 375px;
     }
 
     .event div {
