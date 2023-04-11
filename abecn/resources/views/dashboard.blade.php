@@ -1,17 +1,66 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+    <main class="max-w-none mt-6 sm:mt-0 px-6 sm:px-8 lg:px-10 pb-6 sm:pb-16 sm:pt-16">
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+        <div class="overflow-x-auto">
+            <table class="w-full divide-y divide-gray-200">
+                <thead>
+                    <tr>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Display Name</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">DOB</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Organization</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specialty</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">City</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Registered</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Group</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach ($users as $user)
+                        <?php
+                            if (!function_exists('formatThisDate')) {
+                                function formatThisDate($date) {
+                                    return date("F j, Y", strtotime($date));
+                                }
+                            }
+
+                            $dob = $user['dob'];
+                            $created_at = $user['created_at'];
+                            $dob = formatThisDate($dob);
+                            $created_at = formatThisDate($created_at);
+                        ?>
+                    <tr>
+                        <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $user['display_name']; ?></td>
+                        <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $user['email']; ?></td>
+                        <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $user['first_name'].' '.$user['last_name']; ?></td>
+                        <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $dob; ?></td>
+                        <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $user['organization']; ?></td>
+                        <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $user['specialty']; ?></td>
+                        <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $user['phone']; ?></td>
+                        <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $user['pcity']; ?></td>
+                        <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $created_at; ?></td>
+                        <td x-data="{ isOpen: false }" class="px-4 py-2 md:py-3 whitespace-nowrap text-xs relative inline-block">
+                            <form method="post" action="{{ route('group.update', ['user' => $user['id']]) }}" onchange="this.submit()" class="inline-block relative">
+                                @csrf
+                                @method('patch')
+                                <select name="group_id" class="<?php if ($user['group_id'] === 1) { echo "bg-red-300"; } else { echo "bg-blue-300"; } ?> text-sm rounded appearance-none border border-gray-200 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <option value="2">User</option>
+                                    <option value="1" <?php if ($user['group_id'] === 1) { echo "selected"; } ?>>Admin</option>
+                                </select>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+
+                </tbody>
+            </table>
         </div>
-    </div>
+        <div class="pagination mt-8 max-w-7xl mx-auto xl:px-8">
+            {{ $users->links() }}
+        </div>
+
+    </main>
 </x-app-layout>

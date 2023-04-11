@@ -42,6 +42,7 @@
                             </ul>
                             <div class="mt-6 py-4">
                             <a href="{{ route('register', ['membership' => $membership->stripeName()]) }}" class="dark-btn">Become A Member</a>
+
                             
                             </div>
                         </div>
