@@ -1,5 +1,5 @@
 <x-layout>
-    <main>
+    <main class="inner-container">
         <div class="px-4 lg:px-5 py-8 registration-form">
             <div class="p-4 sm:p-8 bg-white shadow border rounded-lg">
                 <div>

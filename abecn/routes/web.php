@@ -77,7 +77,7 @@ Route::view('/resources', 'resources');
 
 Route::view('/events', 'events');
 
-Route::view('/directors', 'directors');
+Route::view('/memberdirectory', 'memberdirectory');
 
 Route::view('/contact', 'contact');
 

@@ -15,6 +15,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 19.2px;
     color: var(--darkgrey);
+    line-height: 28.8px;
 }
 
 h1 {
@@ -34,7 +35,8 @@ h3 {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: 'Bebas Neue', cursive;
 }
 
@@ -47,7 +49,7 @@ header {
     background-color: var(--dark);
     position: sticky;
     top: calc(100vh - 105px);
-    z-index: 1;
+    z-index: 2;
 }
 
 
@@ -105,7 +107,7 @@ body nav a {
 nav {
     position: absolute;
     background-color: var(--medium);
-    top: -484%;
+    top: -565%;
     width: 100%;
 }
 
@@ -188,7 +190,7 @@ hr {
     color: var(--medium);
 }
 
-/************** sponsors *************/
+/************** our sponsors *************/
 .sponsors {
     background-color:var(--light);
 }
@@ -230,6 +232,65 @@ hr {
     }
 }
 
+/************** membership ************/
+.membership {
+    background-color: var(--light);
+    height: 22rem;
+    margin-bottom: 24rem;
+}
+
+.membership-img {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+}
+
+.membership-img-top {
+    grid-column: 2 / span 8;
+    grid-row: 1;
+    padding-top: 40%;
+    z-index: 1;
+}
+
+.membership-img-bottom {
+    grid-column: 4 / -1;
+    grid-row: 1;
+}
+
+.membership-text {
+    padding-top: 3rem;
+}
+
+/*********** sponsors page ***********/
+.sponsors-banner {
+    background-image: url('../../public/img/building-edge.jpg');
+}
+
+.sponsor-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sponsor-card div {
+    margin-bottom: 48px;
+}
+
+.search-filter-wrapper {
+    gap: 4rem;
+}
+
+/******** member directory page ******/
+.member-directory-banner {
+    background-image: url('../../public/img/audience.jpg');
+}
+
+.member-card {
+    gap: 2rem;
+    padding: 1.5rem;
+    max-width: 34rem;
+}
+
 /************** footer **************/
 footer {
     background-color: var(--medium);
@@ -238,6 +299,7 @@ footer {
 .newsletter {
     background-color: var(--light);
     color: #fff;
+    max-width: 620px;
 }
 
 .newsletter input {
@@ -255,7 +317,28 @@ footer {
     border: 1px solid transparent;
 }
 
-/* media queries */
+/********** media queries ************/
+@media screen and (min-width: 590px){
+    /************ membership info **********/
+    .membership {
+        margin-bottom: 30rem;
+    }
+
+    /************ member directory **********/
+    .member-card {
+        display: flex;
+        text-align: left;
+        align-items: center;
+    }
+
+    .members {
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
+
 @media screen and (min-width: 768px) {
     header {
         position: unset;
@@ -387,19 +470,40 @@ footer {
         width: calc(100vw/2);
     }
 
-    /* footer */
+    /********** membership info page *********/
+    .membership {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    .membership-text {
+        width: 70%;
+        padding-top: 0;
+    }
+
+    /************** sponsors page **********/
+    .board-of-directors {
+        display: flex;
+    }
+
+    /************ footer ***********/
     footer img {
         width: 60%;
     }
 
     .footer-links {
         display: flex;
-        gap: 2rem;
+        gap: 4rem;
         align-items: center;
     }
 
     .socials-newsletter {
         display: flex;
+        align-items: center;
+        margin-top: 2.5rem;
         justify-content: space-between;
         gap: 2rem;
     }
@@ -458,7 +562,7 @@ footer {
     .registration-form,
     .login-form,
     .forgot-password-form,
-    main section:not(main section.home-banner, main section.sponsors) {
+    .inner-container {
         max-width: 1400px;
         margin: 0 auto;
     }
