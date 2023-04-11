@@ -7,10 +7,6 @@
 
     <title>{{ config('app.name', 'ABECN') }}</title>
 
-    <!-- Stylesheets -->
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/modern-reset.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}"> --}}
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +18,7 @@
 <body>
     <header>
         <div
-        class="outer-nav flex justify-between"
+        class="outer-nav flex justify-between items-center"
         x-data="{ open: false }"
         @resize.window="
             width = (window.innerWidth > 0)
@@ -35,8 +31,8 @@
             }
         ">
             <div class="inner-nav flex justify-between items-center">
-                <a href="{{ route('home') }}" class="logo">
-                    <img src="{{ asset('img/ABECN_PNG.webp') }}" alt="ABECN logo">
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('img/abecn-logo.png') }}" alt="ABECN logo">
                 </a>
                 <div class="hamburger-menu" x-on:click="open = !open" :class="open && 'hamburger-open'">
                     <div>
@@ -46,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <nav x-show="window.innerWidth >= 760 ? true: open">
+            <nav x-show="window.innerWidth >= 760 ? true: open" class="h-fit">
                 <ul>
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li>
@@ -102,9 +98,6 @@
                 <div class="secondary-header">
                     <div class="flex md:flex-none justify-center md:justify-end gap-1">
                         @auth
-                            {{-- Don't delete --}}
-                            {{-- <p>Welcome back, {{ Auth::user()->display_name }}</p> --}}
-
                             <a href="{{ route('profile.edit') }}" class="text-center basis-1/2 md:basis-0">Settings</a>
 
                             <form method="POST" action="{{ route('logout') }}" class="logout-form basis-1/2 md:basis-0">
@@ -125,7 +118,7 @@
         <div class="inner-container">
             <div class="flex justify-between align-center">
                 <a href="#">
-                    <img src="{{ asset('img/ABECN_PNG.webp') }}" alt="ABECN logo">
+                    <img src="{{ asset('img/abecn-logo.png') }}" alt="ABECN logo" class="logo">
                 </a>
                 <ul class="footer-links">
                     <li class="mb-2"><a href="#">PRIVACY</a></li>

@@ -1,17 +1,15 @@
 <x-layout>
     <main>
-        <div class="md:px-6 lg:px-8">
+        <div class="px-4 lg:px-5 py-8 registration-form">
             <div class="p-4 sm:p-8 bg-white shadow border rounded-lg">
                 <div>
-                    <h2 class="text-lg font-medium text-gray-900">
+                    <h2 class="text-3xl font-medium">
                         {{ __('Account Registration') }}
                     </h2>
                 </div>
 
-
                 <form method="POST" action="{{ route('register') }}" x-data="{ formStep: 1 }" class="mt-6 mx-0">
                     @csrf
-
 
                     <div x-cloak x-show="formStep === 1" class="space-y-6">
                         <div>
@@ -40,26 +38,16 @@
                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                         </div>
                         <div>
-                            <x-input-label for="birthday" :value="__('Date of Birth')" />
-                            <x-text-input type="date" class="block mt-1 w-full" name="birthday" id="birthday" :value="old('birthday')" required />
-                            <x-input-error :messages="$errors->get('birthday')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="organization" :value="__('Organization')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="organization" id="organization" :value="old('organization')" />
-                            <x-input-error :messages="$errors->get('organization')" class="mt-2" />
-                        </div>
-                        <div>
-                            <x-input-label for="specialty" :value="__('Specialty')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="specialty" id="specialty" :value="old('specialty')" />
-                            <x-input-error :messages="$errors->get('specialty')" class="mt-2" />
+                            <x-input-label for="email" :value="__('Email')" />
+                            <x-text-input type="email" class="block mt-1 w-full" name="email" id="email" :value="old('email')" required />
+                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </div>
                     </div>
                     <div x-cloak x-show="formStep === 2" class="space-y-6">
                         <div>
-                            <x-input-label for="email" :value="__('Email')" />
-                            <x-text-input type="email" class="block mt-1 w-full" name="email" id="email" :value="old('email')" required />
-                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            <x-input-label for="birthday" :value="__('Date of Birth')" />
+                            <x-text-input type="date" class="block mt-1 w-full" name="birthday" id="birthday" :value="old('birthday')" required />
+                            <x-input-error :messages="$errors->get('birthday')" class="mt-2" />
                         </div>
                         <div>
                             <x-input-label for="phone" :value="__('Phone')" />
@@ -70,6 +58,16 @@
                             <x-input-label for="pcity" :value="__('City')" />
                             <x-text-input type="text" class="block mt-1 w-full" name="pcity" id="pcity" :value="old('pcity')" />
                             <x-input-error :messages="$errors->get('pcity')" class="mt-2" />
+                        </div>
+                        <div>
+                            <x-input-label for="organization" :value="__('Organization')" />
+                            <x-text-input type="text" class="block mt-1 w-full" name="organization" id="organization" :value="old('organization')" />
+                            <x-input-error :messages="$errors->get('organization')" class="mt-2" />
+                        </div>
+                        <div>
+                            <x-input-label for="specialty" :value="__('Specialty')" />
+                            <x-text-input type="text" class="block mt-1 w-full" name="specialty" id="specialty" :value="old('specialty')" />
+                            <x-input-error :messages="$errors->get('specialty')" class="mt-2" />
                         </div>
                     </div>
 

@@ -37,7 +37,6 @@ class UserFactory extends Factory
             'specialty' => fake()->jobTitle(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-
             'line1' => $primaryAddress,
             'line2' => $secondaryAddress,
             'pcity' => $city,
