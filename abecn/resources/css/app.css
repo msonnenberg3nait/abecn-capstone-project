@@ -10,7 +10,9 @@
     --lighthover: #9ec4d4;
 }
 
-/* fonts */
+/************* fonts **************/
+/* base font size: 16px, type scale: minor third, line height: 1.5, vertical spacing: multiples of 24 (16x1.5=24) */
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 19.2px;
@@ -18,19 +20,25 @@ body {
     line-height: 1.5;
 }
 
-h1 {
+p {
+    margin-bottom: 1.5rem;
+}
+
+h2 {
     font-size: 47.78px;
     color: #FFF;
 }
 
-h2 {
+h3 {
     font-size: 33.18px;
     color: var(--dark);
+    margin-bottom: 1.5rem;
 }
 
-h3 {
+h4 {
     font-size: 27.65px;
     color: var(--dark);
+    margin-bottom: 0.1rem;
 }
 
 h1,
@@ -44,7 +52,7 @@ h4 {
     font-weight: bolder;
 }
 
-/* header */
+/*************** header *****************/
 header {
     background-color: var(--dark);
     position: sticky;
@@ -107,7 +115,7 @@ body nav a {
 nav {
     position: absolute;
     background-color: var(--medium);
-    top: -565%;
+    top: -480%;
     width: 100%;
 }
 
@@ -132,7 +140,7 @@ nav svg:not(.pagination svg) {
     border-bottom: 3px solid var(--medium);
 }
 
-/* body */
+/**************** body *****************/
 body svg {
     display: inline-block;
 }
@@ -144,25 +152,20 @@ body a {
 }
 
 main {
-    margin-top: -89px; /* header height still takes up space at the top of the page, even though it is "stuck" to the bottom. This fixes it. */
+    margin-top: -105px; /* header height still takes up space at the top of the page, even though it is "stuck" to the bottom. This fixes it. */
+}
+
+section {
+    margin-bottom: 6rem;
 }
 
 .inner-container {
     padding: 0rem 1rem;
 }
 
-.home-banner {
-    background-image: url('../../public/img/skyscrapers.webp');
-}
-
-hr {
-    border: 1px solid lightgrey;
-}
-
-/* buttons */
+/*************** buttons ***************/
 .light-btn,
 .dark-btn {
-    margin-top: 1rem;
     padding: 8px 16px 8px 16px;
     font-weight: bold;
     border-radius: 0.7rem;
@@ -190,7 +193,20 @@ hr {
     color: var(--medium);
 }
 
-/************** our sponsors *************/
+
+/************** home page *************/
+.home-banner {
+    background-image: url('../../public/img/skyscrapers.webp');
+}
+
+hr {
+    border: 1px solid lightgrey;
+}
+
+.event-img {
+    margin-bottom: 1.5rem;
+}
+
 .sponsors {
     background-color:var(--light);
 }
@@ -289,6 +305,117 @@ hr {
     gap: 2rem;
     padding: 1.5rem;
     max-width: 34rem;
+}
+
+/************ resources  ***********/
+.resources-banner {
+    background-image: url('../../public/img/books.webp');
+}
+
+.category li a {
+    color: var(--darkgrey);
+}
+
+.links-text section {
+    margin-bottom: 3rem;
+}
+
+.resources-img {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+}
+
+.resources-img-top {
+    grid-column: 3 / span 8;
+    grid-row: 1;
+    padding-top: 50%;
+    z-index: 1;
+}
+
+.resources-img-bottom {
+    grid-column: 6 / -1;
+    grid-row: -1;
+}
+
+.resources-text {
+    padding-top: 3rem;
+}
+
+.latest-publications div img {
+    max-width: 10rem;
+}
+
+.publications-btn {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+
+}
+
+/************** events **************/
+.events-banner {
+    background-color: var(--light);
+    height: 22rem;
+    margin-bottom: 20rem;
+}
+
+.events-img {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+}
+
+.events-img-top {
+    grid-column: 2 / span 8;
+    grid-row: 1;
+    padding-top: 40%;
+    z-index: 1;
+    max-width: 70%;
+}
+
+.events-img-bottom {
+    grid-column: 4 / -1;
+    grid-row: 1;
+    padding-top: 8%;
+}
+
+.events-text {
+    padding-top: 3rem;
+}
+
+/************ about page ************/
+.about-banner {
+    background-image: url('../../public/img/edmonton-dt.webp');
+}
+
+.about-img {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+}
+
+.about-img-top {
+    grid-column: 1 / span 10;
+    grid-row: 1;
+    padding-top: 55%;
+    z-index: 1;
+    max-width: 70%;
+}
+
+.about-img-bottom {
+    grid-column: 4 / -1;
+    grid-row: 1;
+}
+
+.vision-bg {
+    background-image: url('../../public/img/writing-working.webp');
+    /* height: 17rem; */
+}
+
+.vision-statement {
+    background-color: var(--light);
+    padding: 3rem;
 }
 
 /************** footer **************/
@@ -443,7 +570,7 @@ footer {
         padding: 0rem 1.25rem;
     }
 
-    /* main */
+    /**************** main ****************/
     main {
         margin-top: unset;
     }
@@ -451,23 +578,22 @@ footer {
     .welcome {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
     }
 
     .welcome-text {
-        width: 60%;
-    }
-
-    .welcome-img {
-        width: 40%;
+        width: 55%;
     }
 
     .event {
         display: flex;
-        gap: 2rem;
+        gap: 4rem;
     }
 
     .event-img {
         max-width: 375px;
+        margin-bottom: 0;
     }
 
     .event div {
@@ -479,7 +605,7 @@ footer {
         display: flex;
         align-items: center;
         gap: 1rem;
-        margin-top: 1rem;
+        margin-top: 4.5rem;
         margin-bottom: 0;
     }
 
@@ -493,7 +619,45 @@ footer {
         display: flex;
     }
 
-    /************ footer ***********/
+    /************** resources page **********/
+    .links {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .latest-publications div img {
+        max-width: 15rem;
+    }
+
+    /***************** events page ***************/
+    .events-banner {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 4.5rem;
+        margin-bottom: 0;
+    }
+
+    .events-text {
+        max-width: 50%;
+        padding-top: 0;
+    }
+
+    /*************** about us page *************/
+    .about {
+        display: flex;
+        gap: 4rem;
+    }
+
+    .about-img-bottom {
+        padding-top: 18%;
+    }
+
+    .about-text {
+        max-width: 50vw;
+    }
+
+    /***************** footer ***************/
     footer img {
         width: 60%;
     }
@@ -569,6 +733,10 @@ footer {
     .inner-container {
         max-width: 1400px;
         margin: 0 auto;
+    }
+
+    .our-vision {
+        margin: 6rem auto;
     }
 
     .secondary-header > div {

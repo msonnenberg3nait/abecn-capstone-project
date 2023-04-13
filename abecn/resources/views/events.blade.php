@@ -1,54 +1,70 @@
 <x-layout>
     <main>
-        <section class="membership-banner">
-            <div class="membership-text">
-                <h1>Events</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <div class="events-banner">
+            <div class="events-banner w-full mb-9 py-8 inner-container">
+                <div class="events-text">
+                    <h2>Events</h2>
+                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="events-img">
+                    <div class="events-img-top">
+                        <img src="{{ asset('img/singer-silhouette.webp') }}" alt="Silhouette of a singer performing with a blue background">
+                    </div>
+                    <div class="events-img-bottom">
+                        <img src="{{ asset('img/venue.webp') }}" alt="Interior view of a venue occupied with people">
+                    </div>
+                </div>
             </div>
-            <div class="img-overlap">
-
-            </div>
-        </section>
+        </div>
 
         <section class="calendar">
-
+            <!-- events calendar goes here-->
         </section>
 
-        <section class="latest-events">
-            <div>
-                <h2>LATEST EVENTS</h2>
+        <section>
+            <div class="events inner-container">
+                <h3>Latest Events</h3>
                 <article>
-                    <div>
-                        {{-- Image --}}
+                    <div class="event items-center align-middle mb-6">
+                        <div class="event-img">
+                            <img src="{{ asset('img/group-work-laptops.webp') }}" alt="Top view of a group working on a table">
+                        </div>
+                        <div class="event-text">
+                            <h4>Title Here</h4>
+                            <p class="mb-3">02/05/2023 | By Author</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus laborum consectetur atque nobis repellendus nisi quam blanditiis sequi, iure error...</p>
+                            <a class="dark-btn" href="#">Read More</a>
+                        </div>
                     </div>
-                    <div>
-                        <h3>TITLE HERE</h3>
-                        <p>02/05/2023 | By Author</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus laborum consectetur atque nobis repellendus nisi quam blanditiis sequi, iure error...</p>
-                        <a href="#">READ MORE</a>
-                    </div>
+                    <hr class="my-6">
                 </article>
                 <article>
-                    <div>
-                        {{-- Image --}}
+                    <div class="event items-center align-middle mb-6"> 
+                        <div class="event-img">
+                            <img src="{{ asset('img/lecture.webp') }}" alt="Side view of a lecture">
+                        </div>
+                        <div class="event-text">
+                            <h4>Title Here</h4>
+                            <p class="mb-3">02/05/2023 | By Author</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus laborum consectetur atque nobis repellendus nisi quam blanditiis sequi, iure error...</p>
+                            <a class="dark-btn" href="#">Read More</a>
+                        </div>
                     </div>
-                    <div>
-                        <h3>TITLE HERE</h3>
-                        <p>02/05/2023 | By Author</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus laborum consectetur atque nobis repellendus nisi quam blanditiis sequi, iure error...</p>
-                        <a href="#">READ MORE</a>
-                    </div>
+                    <hr class="my-6">
                 </article>
                 <article>
-                    <div>
-                        {{-- Image --}}
+                    <div class="event items-center align-middle mb-6">
+                        <div class="event-img">
+                            <img src="{{ asset('img/men-discussing.webp') }}" alt="Four men discussing">
+                        </div>
+                        <div class="event-text">
+                            <h4>Title Here</h4>
+                            <p class="mb-3">02/05/2023 | By Author</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus laborum consectetur atque nobis repellendus nisi quam blanditiis sequi, iure error...</p>
+                            <a class="dark-btn" href="#">Read More</a>
+                        </div>
                     </div>
-                    <div>
-                        <h3>TITLE HERE</h3>
-                        <p>02/05/2023 | By Author</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus laborum consectetur atque nobis repellendus nisi quam blanditiis sequi, iure error...</p>
-                        <a href="#">READ MORE</a>
-                    </div>
+                    <hr class="my-9">
                 </article>
             </div>
         </section>

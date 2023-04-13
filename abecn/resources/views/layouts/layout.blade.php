@@ -32,6 +32,7 @@
         ">
             <div class="inner-nav flex justify-between items-center">
                 <a href="{{ route('home') }}">
+                    <h1 class="hidden">Alberta Building Envelope Council North</h1>
                     <img src="{{ asset('img/abecn-logo.png') }}" alt="ABECN logo">
                 </a>
                 <div class="hamburger-menu" x-on:click="open = !open" :class="open && 'hamburger-open'">
@@ -143,7 +144,7 @@
                     </a>
                 </div>
                 <form class="newsletter px-4 py-6 rounded-lg" action="#">
-                    <h3>SIGN UP FOR OUR NEWSLETTER</h3>
+                    <h3 class="mb-3">SIGN UP FOR OUR NEWSLETTER</h3>
                     <div class="newsletter-flex">
                         <div class="mb-4">
                             <label class="block" for="name">Full Name</label>

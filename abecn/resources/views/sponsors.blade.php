@@ -1,13 +1,13 @@
 <x-layout>
     <main>
-        <div class="sponsors-banner mb-9" style="height:17rem;">
+        <section class="sponsors-banner" style="height:17rem;">
             <div class="sponsors-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full;"> 
                 <div class="banner-text inner-container">
-                    <h1>Sponsors</h1>
+                    <h2>Sponsors</h2>
                 </div>
             </div>
-        </div>
-        <div class="search-filter-wrapper inner-container flex items-center align-center">
+        </section>
+        <div class="search-filter-wrapper inner-container flex items-center align-center mb-9">
             <x-search>
             </x-search>
 

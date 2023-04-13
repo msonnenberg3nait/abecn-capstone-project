@@ -1,13 +1,13 @@
 <x-layout>
     <main>
-        <section class="member-directory-banner mb-9" style="height:17rem;">
+        <section class="member-directory-banner" style="height:17rem;">
             <div class="member-directory-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full;"> 
                 <div class="banner-text inner-container">
-                    <h1>Member Directory</h1>
+                    <h2>Member Directory</h2>
                 </div>
             </div>
         </section>
-        <section class="members inner-container mb-9">
+        <section class="members inner-container">
         @foreach ($users as $user)
             <div class="member-card mx-auto bg-slate-100 mb-4 text-center rounded-lg drop-shadow-lg">           
                 <div class="member-img">
