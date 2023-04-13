@@ -33,7 +33,7 @@
             <div class="inner-nav flex justify-between items-center">
                 <a href="{{ route('home') }}">
                     <h1 class="hidden">Alberta Building Envelope Council North</h1>
-                    <img src="{{ asset('img/abecn-logo.png') }}" alt="ABECN logo">
+                    <img src="{{ asset('img/abecn-logo.svg') }}" alt="ABECN logo" class="logo">
                 </a>
                 <div class="hamburger-menu" x-on:click="open = !open" :class="open && 'hamburger-open'">
                     <div>
@@ -118,8 +118,8 @@
     <footer class="py-10 pb-40">
         <div class="inner-container">
             <div class="flex justify-between align-center">
-                <a href="#">
-                    <img src="{{ asset('img/abecn-logo.png') }}" alt="ABECN logo" class="logo">
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('img/abecn-logo.svg') }}" alt="ABECN logo" class="logo">
                 </a>
                 <ul class="footer-links">
                     <li class="mb-2"><a href="#">PRIVACY</a></li>

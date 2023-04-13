@@ -474,6 +474,10 @@ footer {
         margin-top: 45px;
     }
 
+    header img {
+        width: 35%;
+    }
+
     .hamburger-menu {
         display: none;
     }
@@ -659,7 +663,7 @@ footer {
 
     /***************** footer ***************/
     footer img {
-        width: 60%;
+        width: 35%;
     }
 
     .footer-links {
