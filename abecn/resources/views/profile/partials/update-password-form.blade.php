@@ -1,4 +1,4 @@
-<section>
+<div class="update-password-form">
     <div>
         <h2 class="text-3xl font-medium">
             {{ __('Update Password') }}
@@ -45,4 +45,4 @@
             @endif
         </div>
     </form>
-</section>
+</div>
