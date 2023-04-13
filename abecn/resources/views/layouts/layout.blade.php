@@ -148,11 +148,11 @@
                     <div class="newsletter-flex">
                         <div class="mb-4">
                             <label class="block" for="name">Full Name</label>
-                            <input class="w-full border-none" type="text" name="name">
+                            <input class="w-full border-none" type="text" name="name" id="name">
                         </div>
                         <div class="mb-4">
                             <label class="block" for="email">Email</label>
-                            <input class="w-full border-none" type="email" name="email">
+                            <input class="w-full border-none" type="email" name="email" id="email">
                         </div>
                         <div class="mb-4">
                             <input class="footer-btn" type="submit" name="submit" value="Sign up">
