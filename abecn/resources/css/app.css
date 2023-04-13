@@ -56,10 +56,14 @@ h4 {
 header {
     background-color: var(--dark);
     position: sticky;
-    top: calc(100vh - 105px);
+    top: calc(100vh - 109px);
     z-index: 2;
 }
 
+.logo {
+    width: 105px;
+    height: 85px;
+}
 
 body svg {
     display: inline-block;
@@ -115,7 +119,7 @@ body nav a {
 nav {
     position: absolute;
     background-color: var(--medium);
-    top: -480%;
+    bottom: 117px;
     width: 100%;
 }
 
@@ -152,7 +156,7 @@ body a {
 }
 
 main {
-    margin-top: -105px; /* header height still takes up space at the top of the page, even though it is "stuck" to the bottom. This fixes it. */
+    margin-top: -109px; /* header height still takes up space at the top of the page, even though it is "stuck" to the bottom. This fixes it. */
 }
 
 section {
@@ -474,10 +478,6 @@ footer {
         margin-top: 45px;
     }
 
-    header img {
-        width: 35%;
-    }
-
     .hamburger-menu {
         display: none;
     }
@@ -662,10 +662,6 @@ footer {
     }
 
     /***************** footer ***************/
-    footer img {
-        width: 35%;
-    }
-
     .footer-links {
         display: flex;
         gap: 4rem;
