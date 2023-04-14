@@ -15,8 +15,8 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('group_id')->default(2); // regular user
-            $table->foreignId('membership_id')->default(2); // individual
+            $table->foreignId('group_id')->default(2); // user
+            $table->foreignId('membership_id')->default(3); // inactive
             $table->string('first_name', 30);
             $table->string('last_name', 30);
             $table->string('profile_img')->nullable();

@@ -5,17 +5,17 @@
             <table class="w-full divide-y divide-gray-200">
                 <thead>
                     <tr>
-                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Display Name</th>
-                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">DOB</th>
-                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Organization</th>
-                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specialty</th>
-                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
-                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">City</th>
-                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Registered</th>
-                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Group</th>
-                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Delete User</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Display Name</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Email</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Name</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">DOB</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Organization</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Specialty</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Phone</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">City</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Registered</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Group</th>
+                        <th scope="col" class="px-4 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">Delete User</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +43,7 @@
                         <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $user['phone']; ?></td>
                         <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $user['pcity']; ?></td>
                         <td class="px-4 py-2 md:py-3 whitespace-nowrap text-xs"><?php echo $created_at; ?></td>
-                        <td x-data="{ isOpen: false }" class="px-4 py-2 md:py-3 whitespace-nowrap text-xs relative inline-block">
+                        <td x-data="{ isOpen: false }" class="px-4 py-2 md:py-3 whitespace-nowrap text-xs">
                             <form method="post" action="{{ route('group.update', ['user' => $user['id']]) }}" onchange="this.submit()" class="inline-block relative">
                                 @csrf
                                 @method('patch')
@@ -53,11 +53,11 @@
                                 </select>
                             </form>
                         </td>
-                        <td x-data="{ submitForm: false }" class="px-4 py-2 md:py-3 whitespace-nowrap text-xs relative inline-block">
+                        <td x-data="{ submitForm: false }" class="px-4 py-2 md:py-3 whitespace-nowrap text-xs relative">
                             <form @submit.prevent="submitForm = true" method="post" action="{{ route('user.destroy', ['user' => $user['id']]) }}" class="inline-block relative" x-ref="form">
                                 @csrf
                                 @method('delete')
-                                <button x-on:click="if (!window.confirm('Are you sure you want to delete user <?php echo $user['display_name'] ?>? This action cannot be undone. Please verify before pressing OK.')) { $event.preventDefault() } else { submitForm = true; $refs.form.submit(); }" type="submit" id="destroy-submit" name="destroy-submit" class="text-sm rounded appearance-none border border-gray-200 text-white bg-red-900 py-2 px-4 leading-tight focus:outline-none focus:bg-red-900 focus:border-gray-500">
+                                <button x-on:click="if (!window.confirm('Are you sure you want to delete user <?php echo $user['display_name'] ?>? This action cannot be undone. Please verify before pressing OK.')) { $event.preventDefault() } else { submitForm = true; $refs.form.submit(); }" type="submit" id="destroy-submit" name="destroy-submit" class="text-sm rounded appearance-none border border-gray-200 text-white bg-red-800 py-2 px-4 leading-tight focus:outline-none focus:bg-red-800 focus:border-gray-500">
                                     Delete
                                 </button>
                             </form>
