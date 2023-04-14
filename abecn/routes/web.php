@@ -22,15 +22,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $user = User::get();
+Route::get('/', function () { return view('home'); })->name('home');
 
-    return view('home', [
-        'users' => $user
-    ]);
-})->name('home');
-
-// Users updating their own profile
+// User Profile
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -38,10 +32,8 @@ Route::middleware('auth')->group(function () {
 });
 
 // Admin
-Route::middleware(['auth', 'can:accessDashboard'])->group(function () {
+Route::middleware(['auth', 'can:isAdmin', 'throttle:20,1'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'edit'])->name('dashboard');
-
-    // TBD
     Route::patch('/dashboard/{user}', [AdminController::class, 'update'])->name('group.update');
     Route::delete('/dashboard/{user}', [AdminController::class, 'destroy'])->name('user.destroy');
 

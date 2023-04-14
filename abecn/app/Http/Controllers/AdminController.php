@@ -23,11 +23,6 @@ class AdminController extends Controller
 
     public function update(Request $request, $user)
     {
-        // Check if the user has group_id = 1 (Admin)
-        if (Auth::user()->group_id !== 1) {
-            abort('403');
-        }
-
         $user = User::find($user);
         $user->group_id = $request->input('group_id');
         $user->save();
@@ -37,11 +32,6 @@ class AdminController extends Controller
 
     public function destroy(Request $request, $user)
     {
-        // Check if the user has group_id = 1 (Admin)
-        if (Auth::user()->group_id !== 1) {
-            abort('403');
-        }
-
         $user = User::find($user);
         $user->delete();
 

@@ -9,13 +9,11 @@ use Illuminate\Auth\Access\Response;
 class GroupPolicy
 {
     /**
-     * Determine whether the user can view the admin dashboard.
+     * Check whether the user is an admin or not.
      */
-    public function viewDashboard(User $user)
+    public function isAdmin(User $user)
     {
-        return $user->group_id === 1
-        ? Response::allow()
-        : Response::deny('You do not have permission to view the dashboard.');
+        return $user->group_id === 1 ? Response::allow() : Response::deny();
     }
 
     /**
