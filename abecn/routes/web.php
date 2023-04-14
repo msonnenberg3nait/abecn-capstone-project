@@ -22,27 +22,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $user = User::get();
+Route::get('/', function () { return view('home'); })->name('home');
 
-    return view('home', [
-        'users' => $user
-    ]);
-})->name('home');
-
+// User Profile
 Route::middleware('auth')->group(function () {
-    // Admin dashboard
-    Route::get('/dashboard', [AdminController::class, 'edit'])->name('dashboard');
-    Route::patch('/dashboard/{user}', [AdminController::class, 'update'])->name('group.update');
-
-    // Admin dashboard - sponsors
-    Route::get('/dashboard/sponsors', [SponsorController::class, 'create'])->name('sponsor.create');
-    Route::post('/dashboard/sponsors', [SponsorController::class, 'store'])->name('sponsor.store');
-
-    // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+// Admin
+Route::middleware(['auth', 'can:isAdmin', 'throttle:20,1'])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'edit'])->name('dashboard');
+    Route::patch('/dashboard/{user}', [AdminController::class, 'update'])->name('group.update');
+    Route::delete('/dashboard/{user}', [AdminController::class, 'destroy'])->name('user.destroy');
+
+    // TBD
+    Route::get('/dashboard/sponsors', [SponsorController::class, 'create'])->name('sponsor.create');
+    Route::post('/dashboard/sponsors', [SponsorController::class, 'store'])->name('sponsor.store');
 });
 
 Route::get('/sponsors', function () {
