@@ -52,6 +52,15 @@
                                 </select>
                             </form>
                         </td>
+                        <td x-data="{ submitForm: false }" class="px-4 py-2 md:py-3 whitespace-nowrap text-xs relative inline-block">
+                            <form @submit.prevent="submitForm = true" method="post" action="{{ route('user.destroy', ['user' => $user['id']]) }}" class="inline-block relative" x-ref="form">
+                                @csrf
+                                @method('delete')
+                                <button x-on:click="if (!window.confirm('Are you sure you want to delete user <?php echo $user['display_name'] ?>? This action cannot be undone. Please verify before pressing OK.')) { $event.preventDefault() } else { submitForm = true; $refs.form.submit(); }" type="submit" id="destroy-submit" name="destroy-submit" class="text-sm rounded appearance-none border border-gray-200 text-white bg-red-900 py-2 px-4 leading-tight focus:outline-none focus:bg-red-900 focus:border-gray-500">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
 
