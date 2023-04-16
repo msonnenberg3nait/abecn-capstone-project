@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title"><?php echo $title; ?></x-slot>
     <main>
         <section class="resources-banner w-full mb-9" style="height:17rem;">
             <div class="resources-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full">
@@ -65,7 +66,7 @@
                     </div>
                 </div>
                 <div class="button flex flex-col items-center justify-center">
-                    <a class="dark-btn text-center" href="#">Read More</a>   
+                    <a class="dark-btn text-center" href="#">Read More</a>
                 </div>
             </div>
         </section>
@@ -89,7 +90,7 @@
                     <hr class="my-6">
                 </article>
                 <article>
-                    <div class="event items-center align-middle mb-6"> 
+                    <div class="event items-center align-middle mb-6">
                         <div class="event-img">
                             <img src="{{ asset('img/lecture.webp') }}" alt="Side view of a lecture">
                         </div>

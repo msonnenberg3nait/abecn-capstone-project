@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title"><?php echo $title; ?></x-slot>
     <main>
         <section class="about-banner w-full mb-9" style="height:17rem;">
             <div class="about-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full">
@@ -49,7 +50,7 @@
             <h3>Code of Ethics</h3>
             <div class="ethics-text">
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quibusdam cumque. Ex quia soluta commodi vero laudantium sit. Possimus maxime molestias, provident saepe nihil incidunt rerum consequatur voluptatem suscipit natus aliquam fuga facilis minus blanditiis accusamus expedita optio, quo facere totam dolore. Assumenda quasi quas iure amet voluptas sequi corporis fugiat itaque aspernatur odit explicabo, iusto unde repellendus magni iste illo praesentium!</p>
-                    
+
                 <p>Corrupti ab, soluta dolore recusandae harum, eius nobis natus architecto quae impedit saepe veritatis ipsum, quibusdam repellat aliquid? Reprehenderit neque facere voluptate at culpa earum. Voluptas, consequatur. Distinctio voluptate reprehenderit culpa, dolores veritatis, modi laborum quos aliquid harum quo magnam, quibusdam facilis minus molestias vitae nemo ipsum vel consequuntur illo necessitatibus voluptates recusandae. Eaque nam error recusandae enim aliquid explicabo doloribus possimus ex in quod officia laboriosam ipsum expedita maxime voluptatibus voluptates sequi temporibus iure laudantium quas corporis, molestiae harum architecto inventore!</p>
             </div>
             <div class="pdf">

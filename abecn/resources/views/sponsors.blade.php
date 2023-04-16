@@ -1,7 +1,8 @@
 <x-layout>
+    <x-slot name="title"><?php echo $title; ?></x-slot>
     <main>
         <section class="sponsors-banner" style="height:17rem;">
-            <div class="sponsors-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full;"> 
+            <div class="sponsors-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full;">
                 <div class="banner-text inner-container">
                     <h2>Sponsors</h2>
                 </div>

@@ -35,6 +35,10 @@
                             {{ __('Add Sponsor') }}
                         </x-dropdown-link>
 
+                        <x-dropdown-link :href="route('sponsor.list')">
+                            {{ __('List Sponsors') }}
+                        </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

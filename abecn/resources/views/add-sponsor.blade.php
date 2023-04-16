@@ -29,7 +29,7 @@
                         </div>
                         <div>
                             <x-input-label for="city" :value="__('City')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="city" id="city" :value="old('city')" required autofocus />
+                            <x-text-input type="text" class="block mt-1 w-full" name="city" id="city" :value="old('city')" required />
                             <x-input-error :messages="$errors->get('city')" class="mt-2" />
                         </div>
                         <div>
@@ -49,7 +49,7 @@
                         </div>
                         <div>
                             <x-input-label for="bio" :value="__('Bio')" />
-                            <textarea class="bio-input block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" name="bio" id="bio" :value="old('bio')" required></textarea>
+                            <textarea class="bio-input block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" name="bio" id="bio" required>{{ old('bio') }}</textarea>
                             <x-input-error :messages="$errors->get('bio')" class="mt-2" />
                         </div>
                         <x-primary-button>

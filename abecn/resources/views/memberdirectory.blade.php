@@ -1,7 +1,8 @@
 <x-layout>
+    <x-slot name="title"><?php echo $title; ?></x-slot>
     <main>
         <section class="member-directory-banner" style="height:17rem;">
-            <div class="member-directory-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full;"> 
+            <div class="member-directory-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full;">
                 <div class="banner-text inner-container">
                     <h2>Member Directory</h2>
                 </div>
@@ -17,6 +18,6 @@
                 </div>
             </div>
             @endforeach
-    </section>
+      </section>
     </main>
 </x-layout>

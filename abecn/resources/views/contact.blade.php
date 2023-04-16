@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title"><?php echo $title; ?></x-slot>
     <main>
         <section class="contact-banner w-full" style="height:17rem;">
             <div class="contact-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full">

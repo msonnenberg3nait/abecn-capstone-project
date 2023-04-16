@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title"><?php echo $title; ?></x-slot>
     <main>
         <section class="pricing-plans lg:flex lg:-mx-4 mt-12 md:mt-12">
             {{-- Membership Plans--}}
@@ -21,13 +22,12 @@
                             <li>Your voice will be heard</li>
                         </ul>
                         <div class="mt-6 py-4">
-                        <a href="{{ route('payments', ['membership' => $membership->stripeName()]) }}" class="dark-btn">Become A Member</a>                         
+                          <a href="{{ route('payments', ['membership' => $membership->stripeName()]) }}" class="dark-btn">Become A Member</a>                         
                         </div>
                     </div>
                 </div>
             </div>
             @endforeach
-
         </section>
     </main>
 </x-layout>
