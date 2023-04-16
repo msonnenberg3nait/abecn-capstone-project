@@ -43,11 +43,11 @@
                     </div>
                 </div>
             </div>
-            <nav x-show="window.innerWidth >= 760 ? true: open" class="h-fit">
+            <nav x-show="window.innerWidth >= 760 ? true: open" class="h-fit z-10">
                 <ul>
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li>
-                        <a href="/register">
+                        <a href="/memberinfo">
                             Membership Info
                         </a>
                         <ul class="member-info-dropdown">
@@ -131,16 +131,16 @@
             <div class="socials-newsletter">
                 <div class="social-icons flex justify-between my-8">
                     <a href="#">
-                        <img src="{{ asset('img/linkedin-icon.png') }}" class="w-3/4" alt="ABECN logo">
+                        <img src="{{ asset('img/linkedin-icon.png') }}" class="w-3/4" alt="Linkedin icon">
                     </a>
                     <a href="#">
-                        <img src="{{ asset('img/facebook-icon.png') }}" class="w-3/4" alt="ABECN logo">
+                        <img src="{{ asset('img/facebook-icon.png') }}" class="w-3/4" alt="Facebook Icon">
                     </a>
                     <a href="#">
-                        <img src="{{ asset('img/instagram-icon.png') }}" class="w-3/4" alt="ABECN logo">
+                        <img src="{{ asset('img/instagram-icon.png') }}" class="w-3/4" alt="Instagram Icon">
                     </a>
                     <a href="#">
-                        <img src="{{ asset('img/twitter-icon.png') }}" class="w-3/4" alt="ABECN logo">
+                        <img src="{{ asset('img/twitter-icon.png') }}" class="w-3/4" alt="Twitter Icon">
                     </a>
                 </div>
                 <form class="newsletter px-4 py-6 rounded-lg" action="#">
@@ -148,11 +148,11 @@
                     <div class="newsletter-flex">
                         <div class="mb-4">
                             <label class="block" for="name">Full Name</label>
-                            <input class="w-full border-none" type="text" name="name">
+                            <input class="w-full border-none text-black" type="text" name="name">
                         </div>
                         <div class="mb-4">
                             <label class="block" for="email">Email</label>
-                            <input class="w-full border-none" type="email" name="email">
+                            <input class="w-full border-none text-black" type="email" name="email">
                         </div>
                         <div class="mb-4">
                             <input class="footer-btn" type="submit" name="submit" value="Sign up">
