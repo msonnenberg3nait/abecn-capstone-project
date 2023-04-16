@@ -5,6 +5,7 @@
             <div class="events-banner w-full mb-9 py-8 inner-container">
                 <div class="events-text">
                     <h2>Events</h2>
+                    <hr class="text-border w-[10%] mb-6">
                     <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
                 <div class="events-img">
@@ -25,6 +26,7 @@
         <section>
             <div class="events inner-container">
                 <h3>Latest Events</h3>
+                <hr class="text-border w-[5%] mb-6">
                 <article>
                     <div class="event items-center align-middle mb-6">
                         <div class="event-img">

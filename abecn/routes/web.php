@@ -114,6 +114,10 @@ Route::get('/events', function () {
     return view('events', compact('title'));
 });
 
+Route::view('/directors', 'directors');
+
+Route::view('/memberinfo', 'memberinfo');
+
 Route::get('/contact', function () {
     $title = 'Contact';
     return view('contact', compact('title'));

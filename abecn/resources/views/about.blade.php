@@ -12,6 +12,7 @@
                 <div class="about-text lg:basis-1/2">
                     <div class="about-abecn">
                         <h3>About ABECN</h3>
+                        <hr class="text-border w-[10%] mb-6">
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quibusdam cumque. Ex quia soluta commodi vero laudantium sit. Possimus maxime molestias, provident saepe nihil incidunt rerum consequatur voluptatem suscipit natus aliquam fuga facilis minus blanditiis accusamus expedita optio, quo facere totam dolore. Assumenda quasi quas iure amet voluptas sequi corporis fugiat itaque aspernatur odit explicabo, iusto unde repellendus magni iste illo praesentium!</p>
                     </div>
                     <div class="history">

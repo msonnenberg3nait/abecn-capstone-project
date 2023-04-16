@@ -11,16 +11,9 @@
         <section>
             <div class="inner-container">
                 <h3>Links</h3>
+                <hr class="text-border w-[5%] mb-6">
                 <div class="links">
                     <div class="links-text">
-                        <section>
-                            <ul class="category">
-                                <h4 class="mb-6">Link Category Name</h4>
-                                <li><a class="underline mb-6" href="#">link name here. Lorem Ipsum dolor sit amet, consectur</a></li>
-                                <li><a class="underline mb-6" href="#">link name here. Lorem Ipsum dolor sit amet, consectur</a></li>
-                                <li><a class="underline mb-6" href="#">link name here. Lorem Ipsum dolor sit amet, consectur</a></li>
-                            </ul>
-                        </section>
                         <section>
                             <ul class="category">
                                 <h4 class="mb-6">Link Category Name</h4>
@@ -43,7 +36,7 @@
                             <img class="w-3/4" src="{{ asset('img/pair-working.webp') }}" alt="View of construction cranes with the sky in the background">
                         </div>
                         <div class="resources-img-bottom">
-                            <img src="{{ asset('img/construction.webp') }}" alt="View of two laptops and two people reviewing documents together">
+                            <img src="{{ asset('img/construction.webp') }}" alt="View of construction cranes with the sky in the background">
                         </div>
                     </div>
                 </div>
@@ -53,6 +46,7 @@
         <section>
             <div class="inner-container">
                 <h3>Latest Publications</h3>
+                <hr class="text-border w-[10%] mb-6">
                 <div class="flex justify-between flex-wrap latest-publications mb-6">
                     <div class="mb-6">
                         <h4>Spring 2021</h4>
@@ -80,6 +74,7 @@
         <section>
             <div class="events inner-container">
                 <h3>Latest Events</h3>
+                <hr class="text-border w-[10%] mb-6">
                 <article>
                     <div class="event items-center align-middle mb-6">
                         <div class="event-img">
