@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title"><?php echo $title; ?></x-slot>
     <main>
         <section class="committees-banner">
             <h1>Committees</h1>
@@ -14,7 +15,7 @@
         </section>
         <section class="casual-nights">
             <div class="casual-nights-img">
-                
+
             </div>
             <div class="casual-nights-text">
                 <h2>Casual Nights Committee</h2>

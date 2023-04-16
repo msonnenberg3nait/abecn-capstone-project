@@ -17,12 +17,12 @@ class SponsorController extends Controller
      */
     public function create(): View
     {
-        // Check if the user has group_id = 1 (Admin)
-        if (Auth::user()->group_id !== 1) {
-            abort('403');
-        }
+        return view('add-sponsor');
+    }
 
-        return view('edit-sponsors');
+    public function edit(): View
+    {
+        return view('list-sponsor');
     }
 
     public function store(Request $request): RedirectResponse
@@ -52,6 +52,6 @@ class SponsorController extends Controller
             'bio' => $request->bio,
         ]);
 
-        return redirect('/dashboard/sponsors');
+        return redirect('/dashboard/sponsors/add');
     }
 }

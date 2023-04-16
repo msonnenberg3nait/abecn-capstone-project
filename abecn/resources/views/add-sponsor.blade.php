@@ -29,7 +29,7 @@
                         </div>
                         <div>
                             <x-input-label for="city" :value="__('City')" />
-                            <x-text-input type="text" class="block mt-1 w-full" name="city" id="city" :value="old('city')" required autofocus />
+                            <x-text-input type="text" class="block mt-1 w-full" name="city" id="city" :value="old('city')" required />
                             <x-input-error :messages="$errors->get('city')" class="mt-2" />
                         </div>
                         <div>

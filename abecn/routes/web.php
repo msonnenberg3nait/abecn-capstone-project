@@ -7,6 +7,7 @@ use App\Http\Controllers\Stripe\PaymentController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Models\Membership;
 use App\Models\User;
 use App\Models\Sponsor;
 use Illuminate\Support\Facades\Route;
@@ -22,10 +23,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () { return view('home'); })->name('home');
+Route::get('/', function () {
+    $title = 'Home';
+    return view('home', compact('title'));
+})->name('home');
 
 // User Profile
 Route::middleware('auth')->group(function () {
+    // title is set in the controller for User Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -37,37 +42,50 @@ Route::middleware(['auth', 'can:isAdmin', 'throttle:20,1'])->group(function () {
     Route::patch('/dashboard/{user}', [AdminController::class, 'update'])->name('group.update');
     Route::delete('/dashboard/{user}', [AdminController::class, 'destroy'])->name('user.destroy');
 
-    // TBD
-    Route::get('/dashboard/sponsors', [SponsorController::class, 'create'])->name('sponsor.create');
-    Route::post('/dashboard/sponsors', [SponsorController::class, 'store'])->name('sponsor.store');
+    Route::get('/dashboard/sponsors/add', [SponsorController::class, 'create'])->name('sponsor.create');
+    Route::post('/dashboard/sponsors/add', [SponsorController::class, 'store'])->name('sponsor.store');
+    Route::get('/dashboard/sponsors/edit', [SponsorController::class, 'edit'])->name('sponsor.edit');
 });
 
 Route::get('/sponsors', function () {
+    $title = 'Sponsors';
     $sponsor = Sponsor::get();
-
     return view('sponsors', [
-        'sponsors' => $sponsor
+        'sponsors' => $sponsor,
+        'title' => $title
     ]);
 });
 
 Route::get('sponsors/{sponsor:company_name}', function (Sponsor $sponsor) {
+    $title = $sponsor['company_name'];
     return view('/sponsor', [
-        'sponsor' => $sponsor
+        'sponsor' => $sponsor,
+        'title' => $title
     ]);
 });
 
 Route::get('/memberdirectory', function () {
+    $title = 'Member Directory';
     $user = User::get();
-
     return view('/memberdirectory', [
-        'users' => $user
+        'users' => $user,
+        'title' => $title
     ]);
 });
 
+Route::get('/about', function () {
+    $title = 'About Us';
+    return view('about', compact('title'));
+});
 
-Route::view('/about', 'about');
-
-Route::get('/membership', [MembershipController::class, 'index'])->name('membership');//middleware(['auth', 'verified']);
+Route::get('/membership', function () {
+    $title = 'Membership';
+    $memberships = Membership::all();
+    return view('membership', [
+        'memberships' => $memberships,
+        'title' => $title
+    ]);
+});
 
 Route::get('/payment', [PaymentController::class, 'index'])->name('payments');
 Route::post('/payment', [PaymentController::class, 'store'])->name('payments.store');
@@ -76,13 +94,25 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/billing',  [BillingController::class, 'index'])->name('billing');
 });
 
-Route::view('/committees', 'committees');
+Route::get('/committees', function () {
+    $title = 'Committees';
+    return view('committees', compact('title'));
+});
 
-Route::view('/resources', 'resources');
+Route::get('/resources', function () {
+    $title = 'Resources';
+    return view('resources', compact('title'));
+});
 
-Route::view('/events', 'events');
+Route::get('/events', function () {
+    $title = 'Events';
+    return view('events', compact('title'));
+});
 
-Route::view('/contact', 'contact');
+Route::get('/contact', function () {
+    $title = 'Contact';
+    return view('contact', compact('title'));
+});
 
 require __DIR__.'/auth.php';
 
