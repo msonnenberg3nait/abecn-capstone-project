@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title"><?php echo $title; ?></x-slot>
     <main>
         <div class="pricing-table-2">
             <div>
@@ -41,7 +42,7 @@
                                     <li>Your voice will be heard</li>
                                 </ul>
                                 <div class="mt-6 py-4">
-                                <a href="{{ route('payments', ['membership' => $membership->stripeName()]) }}" class="dark-btn">Become A Member</a>                         
+                                <a href="{{ route('payments', ['membership' => $membership->stripeName()]) }}" class="dark-btn">Become A Member</a>
                                 </div>
                             </div>
                         </div>

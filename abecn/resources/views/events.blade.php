@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title"><?php echo $title; ?></x-slot>
     <main>
         <div class="events-banner">
             <div class="events-banner w-full mb-9 py-8 inner-container">
@@ -39,7 +40,7 @@
                     <hr class="my-6">
                 </article>
                 <article>
-                    <div class="event items-center align-middle mb-6"> 
+                    <div class="event items-center align-middle mb-6">
                         <div class="event-img">
                             <img src="{{ asset('img/lecture.webp') }}" alt="Side view of a lecture">
                         </div>

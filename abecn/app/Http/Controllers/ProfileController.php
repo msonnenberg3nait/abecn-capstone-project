@@ -16,8 +16,11 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        $title = 'Update Profile';
+
         return view('profile.edit', [
             'user' => $request->user(),
+            'title' => $title
         ]);
     }
 
