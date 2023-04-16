@@ -85,6 +85,10 @@ Route::view('/resources', 'resources');
 
 Route::view('/events', 'events');
 
+Route::view('/directors', 'directors');
+
+Route::view('/memberinfo', 'memberinfo');
+
 Route::view('/contact', 'contact');
 
 require __DIR__.'/auth.php';
