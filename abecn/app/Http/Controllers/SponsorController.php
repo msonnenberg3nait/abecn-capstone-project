@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SponsorUpdateRequest;
 use App\Models\Sponsor;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -20,11 +21,15 @@ class SponsorController extends Controller
         return view('add-sponsor');
     }
 
-    public function edit(): View
+    public function list(): View
     {
-        return view('list-sponsor');
+        $sponsors = Sponsor::all();
+        return view('list-sponsor', ['sponsors' => $sponsors]);
     }
 
+    /**
+     * Create a new sponsor.
+     */
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
@@ -53,5 +58,32 @@ class SponsorController extends Controller
         ]);
 
         return redirect('/dashboard/sponsors/add');
+    }
+
+    /**
+     * Display the sponsor's details in a form.
+     */
+    public function edit($id): View
+    {
+        $sponsor = Sponsor::findOrFail($id);
+        return view('edit-sponsor', ['sponsor' => $sponsor]);
+    }
+
+    /**
+     * Update the sponsor's information.
+     */
+    public function update(SponsorUpdateRequest $request, $id): RedirectResponse
+    {
+        $sponsor = Sponsor::find($id);
+
+        if (!$sponsor) {
+            abort(404);
+        }
+
+        $sponsor->fill($request->validated());
+
+        $sponsor->save();
+
+        return Redirect::route('sponsor.list');
     }
 }

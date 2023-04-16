@@ -35,8 +35,8 @@
                             {{ __('Add Sponsor') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link :href="route('sponsor.edit')">
-                            {{ __('Edit Sponsors') }}
+                        <x-dropdown-link :href="route('sponsor.list')">
+                            {{ __('List Sponsors') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->

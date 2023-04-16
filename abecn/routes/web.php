@@ -4,7 +4,6 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Dashboard\BillingController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\Stripe\PaymentController;
-use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Models\Membership;
@@ -38,13 +37,19 @@ Route::middleware('auth')->group(function () {
 
 // Admin
 Route::middleware(['auth', 'can:isAdmin', 'throttle:20,1'])->group(function () {
+    // Dashboard Home - List users, change group and delete user
     Route::get('/dashboard', [AdminController::class, 'edit'])->name('dashboard');
     Route::patch('/dashboard/{user}', [AdminController::class, 'update'])->name('group.update');
     Route::delete('/dashboard/{user}', [AdminController::class, 'destroy'])->name('user.destroy');
 
+    // Dashboard Sponsors - List sponsors, edit sponsor
+    Route::get('/dashboard/sponsors/', [SponsorController::class, 'list'])->name('sponsor.list');
+    Route::get('/dashboard/sponsors/edit/{id}', [SponsorController::class, 'edit'])->name('sponsor.edit');
+    Route::patch('/dashboard/sponsors/edit/{id}', [SponsorController::class, 'update'])->name('sponsor.update');
+
+    // Dashboard Sponsors - Add new sponsor
     Route::get('/dashboard/sponsors/add', [SponsorController::class, 'create'])->name('sponsor.create');
     Route::post('/dashboard/sponsors/add', [SponsorController::class, 'store'])->name('sponsor.store');
-    Route::get('/dashboard/sponsors/edit', [SponsorController::class, 'edit'])->name('sponsor.edit');
 });
 
 Route::get('/sponsors', function () {

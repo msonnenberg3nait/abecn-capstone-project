@@ -15,8 +15,8 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="antialiased">
-    <div class="bg-slate-100">
+<body class="antialiased bg-slate-100">
+    <div>
         @include('layouts.navigation')
 
             <!-- Page Heading -->
