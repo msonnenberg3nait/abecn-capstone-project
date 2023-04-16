@@ -16,11 +16,6 @@ class AdminController extends Controller
      */
     public function edit(Request $request): View
     {
-        // Check if the user has group_id = 1 (Admin)
-        if (Auth::user()->group_id !== 1) {
-            abort('403');
-        }
-
         $users = User::paginate(20);
 
         return view('dashboard', ['users' => $users]);
@@ -28,14 +23,17 @@ class AdminController extends Controller
 
     public function update(Request $request, $user)
     {
-        // Check if the user has group_id = 1 (Admin)
-        if (Auth::user()->group_id !== 1) {
-            abort('403');
-        }
-
         $user = User::find($user);
         $user->group_id = $request->input('group_id');
         $user->save();
+
+        return Redirect::route('dashboard');
+    }
+
+    public function destroy(Request $request, $user)
+    {
+        $user = User::find($user);
+        $user->delete();
 
         return Redirect::route('dashboard');
     }

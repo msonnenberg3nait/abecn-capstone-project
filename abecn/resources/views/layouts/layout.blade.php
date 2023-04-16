@@ -31,9 +31,9 @@
             }
         ">
             <div class="inner-nav flex justify-between items-center">
-                <a href="{{ route('home') }}">
+                <a href="{{ route('home') }}" class="logo">
                     <h1 class="hidden">Alberta Building Envelope Council North</h1>
-                    <img src="{{ asset('img/abecn-logo.png') }}" alt="ABECN logo">
+                    <img src="{{ asset('img/abecn-logo.svg') }}" alt="ABECN logo">
                 </a>
                 <div class="hamburger-menu" x-on:click="open = !open" :class="open && 'hamburger-open'">
                     <div>
@@ -118,8 +118,8 @@
     <footer class="py-10 pb-40">
         <div class="inner-container">
             <div class="flex justify-between align-center">
-                <a href="#">
-                    <img src="{{ asset('img/abecn-logo.png') }}" alt="ABECN logo" class="logo">
+                <a href="{{ route('home') }}" class="logo">
+                    <img src="{{ asset('img/abecn-logo.svg') }}" alt="ABECN logo">
                 </a>
                 <ul class="footer-links">
                     <li class="mb-2"><a href="#">PRIVACY</a></li>
@@ -147,12 +147,12 @@
                     <h3 class="mb-3">SIGN UP FOR OUR NEWSLETTER</h3>
                     <div class="newsletter-flex">
                         <div class="mb-4">
-                            <label class="block" for="name">Full Name</label>
-                            <input class="w-full border-none text-black" type="text" name="name">
+                            <label class="block" for="newsletter-name">Full Name</label>
+                            <input class="w-full border-none" type="text" name="newsletter-name" id="newsletter-name">
                         </div>
                         <div class="mb-4">
-                            <label class="block" for="email">Email</label>
-                            <input class="w-full border-none text-black" type="email" name="email">
+                            <label class="block" for="newsletter-email">Email</label>
+                            <input class="w-full border-none" type="email" name="newsletter-email" id="newsletter-email">
                         </div>
                         <div class="mb-4">
                             <input class="footer-btn" type="submit" name="submit" value="Sign up">

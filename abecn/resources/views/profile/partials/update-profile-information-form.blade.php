@@ -1,4 +1,4 @@
-<section>
+<div class="update-profile-form">
     <div>
         <h2 class="text-3xl font-medium">
             {{ __('Profile Information') }}
@@ -96,4 +96,4 @@
             @endif
         </div>
     </form>
-</section>
+</div>
