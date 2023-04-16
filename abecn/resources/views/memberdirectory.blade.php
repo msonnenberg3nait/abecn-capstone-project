@@ -7,16 +7,13 @@
                 </div>
             </div>
         </section>
-        <section class="members inner-container">
+        <section class="members inner-container md:flex flex-wrap">
         @foreach ($users as $user)
-            <div class="member-card mx-auto bg-slate-100 mb-4 text-center rounded-lg drop-shadow-lg">           
-                <div class="member-img">
-                    <img class="w-40 h-16 mb-3 mx-auto rounded-full shadow-lg" src="{{$user->profile_img }}" alt="Profile image"/>
-                </div>
+            <div class="member-card mx-auto bg-slate-100 mb-9 text-center rounded-lg drop-shadow-lg">
                 <div class="member-info">
                     <h4 class="mb-1 text-3xl">{{ $user->first_name}} {{ $user->last_name}}</h4>
                     <h5 class="uppercase">{{ $user->specialty }}</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
             </div>
             @endforeach
