@@ -32,13 +32,13 @@ h2 {
 h3 {
     font-size: 33.18px;
     color: var(--dark);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 h4 {
     font-size: 27.65px;
     color: var(--dark);
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.2rem;
 }
 
 h1,
@@ -163,6 +163,9 @@ section {
     padding: 0rem 1rem;
 }
 
+.text-border {
+    border: 2px solid var(--medium);
+}
 /*************** buttons ***************/
 .light-btn,
 .dark-btn {
@@ -248,10 +251,10 @@ hr {
     }
 }
 
-/************** membership ************/
+/*********** membership info page *********/
 .membership {
     background-color: var(--light);
-    height: 22rem;
+    height: 35.75rem;
     margin-bottom: 24rem;
 }
 
@@ -271,10 +274,6 @@ hr {
 .membership-img-bottom {
     grid-column: 4 / -1;
     grid-row: 1;
-}
-
-.membership-text {
-    padding-top: 3rem;
 }
 
 /*********** sponsors page ***********/
@@ -342,8 +341,8 @@ hr {
     padding-top: 3rem;
 }
 
-.latest-publications div img {
-    max-width: 10rem;
+.latest-publications div {
+    flex-basis: 24%;
 }
 
 .publications-btn {
@@ -386,7 +385,7 @@ hr {
 
 /************ about page ************/
 .about-banner {
-    background-image: url('../../public/img/edmonton-dt.webp');
+    background-image: url('../../public/img/walterdale-bridge.webp');
 }
 
 .about-img {
@@ -410,12 +409,38 @@ hr {
 
 .vision-bg {
     background-image: url('../../public/img/writing-working.webp');
-    /* height: 17rem; */
 }
 
 .vision-statement {
     background-color: var(--light);
     padding: 3rem;
+}
+
+/************** committees **************/
+.committees-banner {
+    background-image: url('../../public/img/committee.webp');
+}
+
+/******** board of directors page ********/
+.directors-banner {
+    background-image: url('../../public/img/work-meeting.webp');
+}
+
+/*********** contact page ***********/
+.contact-banner {
+    background-image: url('../../public/img/using-phone.webp');
+}
+
+.get-in-touch {
+    background-color: var(--light);
+}
+
+.contact-form {
+    background-color: #1E4C86;
+}
+
+.get-in-touch {
+    padding: 4.5rem 0;
 }
 
 /************** footer **************/
@@ -445,26 +470,6 @@ footer {
 }
 
 /********** media queries ************/
-@media screen and (min-width: 590px){
-    /************ membership info **********/
-    .membership {
-        margin-bottom: 30rem;
-    }
-
-    /************ member directory **********/
-    .member-card {
-        display: flex;
-        text-align: left;
-        align-items: center;
-    }
-
-    .members {
-        display: flex;
-        align-content: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-}
 
 @media screen and (min-width: 768px) {
     header {
@@ -604,14 +609,18 @@ footer {
     .membership {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        margin-top: 4.5rem;
-        margin-bottom: 0;
+        gap: 4rem;
+        margin: 4.5rem 0 9rem 0;
     }
 
     .membership-text {
-        width: 70%;
+        flex-basis: 50%;
         padding-top: 0;
+        margin-bottom: 0;
+    } 
+
+    .membership-img {
+        flex-basis: 50%;
     }
 
     /************** sponsors page **********/
@@ -656,6 +665,9 @@ footer {
     .about-text {
         max-width: 50vw;
     }
+
+    /********* board of directors page *********/
+
 
     /***************** footer ***************/
     footer img {
