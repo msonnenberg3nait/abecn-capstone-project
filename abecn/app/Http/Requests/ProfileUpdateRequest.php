@@ -27,9 +27,10 @@ class ProfileUpdateRequest extends FormRequest
             'line1' => ['nullable', 'string', 'min:3', 'max:60'],
             'line2' => ['nullable', 'string', 'min:3', 'max:60'],
             'pcity' => ['nullable', 'string', 'min:3', 'max:20'],
+            'city' => ['nullable', 'string', 'min:3', 'max:20'],
             'state' => ['nullable', 'string', 'min:2', 'max:2'],
             'country' => ['nullable', 'string', 'min:2', 'max:2'],
-            'postal_code' => ['nullable', 'regex:/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/', 'max:6'],
+            'postal_code' => ['nullable', 'regex:/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/', 'min:6', 'max:7'],
         ];
     }
 }

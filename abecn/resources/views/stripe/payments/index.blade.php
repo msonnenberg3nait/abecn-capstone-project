@@ -44,7 +44,7 @@
                     <div>
                         <x-input-label for="state" :value="__('Province')" />
                         <x-text-input type="text" class="block mb-4 w-full" name="state" id="state" :value="old('state')" />
-                        <x-input-error :messages="$errors->get('province')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('state')" class="mt-2" />
                     </div>
 
                     <div>

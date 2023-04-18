@@ -16,6 +16,17 @@
 
             <div class="p-4 sm:p-8 bg-white shadow border rounded-lg">
                 <div>
+                    @include('profile.partials.update-billing-information-form')
+                </div>
+            </div>
+
+            <form class="my-4" method="GET" action="{{ route('billing-portal') }}">
+                @csrf
+                <x-primary-button type="submit">Manage Credit Card Information</x-primary-button>
+            </form>
+
+            <div class="p-4 sm:p-8 bg-white shadow border rounded-lg">
+                <div>
                     @include('profile.partials.update-password-form')
                 </div>
             </div>

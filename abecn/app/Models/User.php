@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Cashier\Billable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
+use function Illuminate\Events\queueable;
 
 class User extends Authenticatable
 {
@@ -68,6 +69,28 @@ class User extends Authenticatable
 
     public function membership() {
         return $this->belongsTo(Membership::class);
+    }
+
+
+    protected static function booted(): void
+    {
+    static::updated(queueable(function (User $customer) {
+        if ($customer->hasStripeId()) {
+            $customer->syncStripeCustomerDetails();
+        }
+    }));
+    }
+
+    public function stripeAddress()
+    {
+        return [
+            'line1'        => $this->line1,
+            'line2'        => $this->line2,
+            'city'         => $this->city,
+            'state'        => $this->state,
+            'country'      => $this->country,
+            'postal_code'  => $this->postal_code,
+        ];
     }
 
     public function scopeFilter($query, array $filters)

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('stripe_name');
-            $table->string('stripe_id');
+            $table->string('stripe_product_id');
+            $table->string('stripe_price_id');
             $table->bigInteger('price');
             $table->string('abbreviation');
             $table->timestamps();
