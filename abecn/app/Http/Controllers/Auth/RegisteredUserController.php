@@ -51,7 +51,7 @@ class RegisteredUserController extends Controller
             'payment_method' => ['required_if:payment_option,stripe'],
             'card_holder_name' => ['required_if:payment_option,stripe', 'string', 'max:80'],
         ]);
-    
+
         $user = User::create([
             'first_name' => $request->firstname,
             'last_name' => $request->lastname,
@@ -75,12 +75,14 @@ class RegisteredUserController extends Controller
 
             $user->createAsStripeCustomer();
 
-    
+
         event(new Registered($user));
-    
+
         //Login the user
         Auth::login($user);
-    
+
+        session()->flash('success', 'Your account has been successfully created and you are now signed in.');
+
         return redirect('/membership');
     }
 }

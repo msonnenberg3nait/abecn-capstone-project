@@ -56,7 +56,7 @@ h4 {
 header {
     background-color: var(--dark);
     position: sticky;
-    top: calc(100vh - 109px);
+    top: calc(100vh - 117px);
     z-index: 2;
 }
 
@@ -116,14 +116,14 @@ body nav a {
     border: 2px solid white;
 }
 
-nav {
+nav:not(.pagination nav) {
     position: absolute;
     background-color: var(--medium);
     bottom: 117px;
     width: 100%;
 }
 
-nav a {
+nav:not(.pagination nav) a {
     display: inline-block;
     width: 100%;
     padding: 0.75rem 1.5rem;
@@ -139,7 +139,8 @@ nav svg:not(.pagination svg) {
     fill: white;
 }
 
-.secondary-header a {
+nav > .secondary-header > div > a,
+nav > .secondary-header > div > form a {
     background-color: var(--dark);
     border-bottom: 3px solid var(--medium);
 }
@@ -156,7 +157,7 @@ body a {
 }
 
 main {
-    margin-top: -109px; /* header height still takes up space at the top of the page, even though it is "stuck" to the bottom. This fixes it. */
+    margin-top: -146px; /* header height still takes up space at the top of the page, even though it is "stuck" to the bottom. This fixes it. */
 }
 
 section {
@@ -496,7 +497,7 @@ footer {
         padding: unset;
     }
 
-    nav {
+    nav:not(.pagination nav) {
         position: unset;
         width: unset;
         background-color: unset;
@@ -506,7 +507,7 @@ footer {
         display: none;
     }
 
-    nav a:not(.pagination nav a) {
+    nav:not(.pagination nav) a {
         padding: 0.75rem 0;
         border-bottom: 0;
     }
@@ -564,7 +565,8 @@ footer {
         gap: 1.5rem;
     }
 
-    .secondary-header a {
+    nav > .secondary-header > div > a,
+    nav > .secondary-header > div > form a {
         padding: 0.75rem 0;
         width: unset;
         background-color: var(--medium);
@@ -621,7 +623,7 @@ footer {
         flex-basis: 50%;
         padding-top: 0;
         margin-bottom: 0;
-    } 
+    }
 
     .membership-img {
         flex-basis: 50%;
@@ -709,7 +711,7 @@ footer {
         margin-top: 51px;
     }
 
-    nav a {
+    nav:not(.pagination nav) a {
         font-size: 1.125rem;
     }
 

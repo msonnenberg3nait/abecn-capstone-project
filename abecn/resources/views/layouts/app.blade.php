@@ -16,10 +16,16 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="antialiased bg-slate-100">
+    @if (session()->has('success'))
+        <div x-data="{ show: true }"
+            x-init="setTimeout(() => show = false, 4000)"
+            x-show="show"
+            class="fixed z-50 bg-slate-700 bg-opacity-90 text-white text-center py-4 px-2 md:px-6 text-sm md:rounded-xl w-full md:w-fit top-0 md:top-auto md:bottom-3 md:right-3">
+            <p class="m-0">{{ session('success') }}</p>
+        </div>
+    @endif
     <div>
         @include('layouts.navigation')
-
-            <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -27,15 +33,7 @@
                     </div>
                 </header>
             @endif
-
-            {{-- Alerts --}}
-            <div class="mx-6 mt-6">
-                <x-alerts.main />
-            </div>
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+            {{ $slot }}
         </div>
     </body>
 </html>
