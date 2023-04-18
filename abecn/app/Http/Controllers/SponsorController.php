@@ -21,6 +21,9 @@ class SponsorController extends Controller
         return view('add-sponsor');
     }
 
+    /**
+     * Display a list of all sponsors.
+     */
     public function list(): View
     {
         $sponsors = Sponsor::all();
@@ -57,6 +60,8 @@ class SponsorController extends Controller
             'bio' => $request->bio,
         ]);
 
+        session()->flash('success', 'New sponsor successfully created.');
+
         return redirect('/dashboard/sponsors/add');
     }
 
@@ -83,6 +88,8 @@ class SponsorController extends Controller
         $sponsor->fill($request->validated());
 
         $sponsor->save();
+
+        session()->flash('success', 'Sponsor successfully updated.');
 
         return Redirect::route('sponsor.list');
     }
