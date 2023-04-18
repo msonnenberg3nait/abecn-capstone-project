@@ -39,6 +39,10 @@
                             {{ __('List Sponsors') }}
                         </x-dropdown-link>
 
+                        <x-dropdown-link :href="route('home')">
+                            {{ __('Return to ABECN') }}
+                        </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
