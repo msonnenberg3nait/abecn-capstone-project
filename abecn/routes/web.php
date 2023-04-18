@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Dashboard\BillingController;
+use App\Http\Controllers\BillingPortalController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\Stripe\PaymentController;
 use App\Http\Controllers\ProfileController;
@@ -33,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/billing-portal', BillingPortalController::class)->name('billing-portal');
 });
 
 // Admin

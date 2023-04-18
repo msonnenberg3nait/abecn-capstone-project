@@ -35,8 +35,9 @@ class PaymentController extends Controller
 
         $membership = Membership::where('stripe_name', $request->membership)->first();
 
-        $user->newSubscription($membership->stripe_name, $membership->stripe_id)->create($paymentMethod);
+        $user->newSubscription($membership->stripe_name, $membership->stripe_price_id)->create($paymentMethod);
 
-        return redirect()->route('billing')->with('success', 'Thank you for becoming a member at ABECN!');
+        return redirect()->route('/edit');
     }
+
 }
