@@ -17,7 +17,8 @@ class PlanTableSeeder extends Seeder
             'name' => 'Individual',
             'slug' => 'individual',
             'stripe_name' => 'individual',
-            'stripe_id' => 'price_1MqU6QEe4PK41pzAAfwvDtWz',
+            'stripe_product_id' => 'prod_NbhV44wu2U7d7P',
+            'stripe_price_id' => 'price_1MqU6QEe4PK41pzAAfwvDtWz',
             'price' => 75,
             'abbreviation' => '/year',
         ]);
@@ -26,7 +27,8 @@ class PlanTableSeeder extends Seeder
             'name' => 'Student',
             'slug' => 'student',
             'stripe_name' => 'student',
-            'stripe_id' => 'price_1MqU6wEe4PK41pzA2LgxD7yl',
+            'stripe_product_id' => 'prod_NbhVguzFC2jBAX',
+            'stripe_price_id' => 'price_1MqU6wEe4PK41pzA2LgxD7yl',
             'price' => 25,
             'abbreviation' => '/year',
         ]);
