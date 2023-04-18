@@ -1,5 +1,5 @@
 <x-app-layout>
-    <main class="max-w-7xl mx-auto mt-6 sm:mt-0 px-6 sm:px-8 lg:px-10 pb-16 pt-16 md:pt-6 md:pb-32">
+    <main class="max-w-7xl mx-auto mt-1 md:mt-0 px-6 sm:px-8 lg:px-10 pb-6 md:py-6">
         <div class="px-4 lg:px-5 py-8 registration-form">
             <div class="p-4 sm:p-8 bg-white shadow border rounded-lg">
                 <div>

@@ -1,5 +1,5 @@
 <x-app-layout>
-    <main class="max-w-none mt-6 sm:mt-0 px-6 sm:px-8 lg:px-10 pb-16 pt-32 md:py-10">
+    <main class="max-w-none mt-4 md:mt-0 px-6 sm:px-8 lg:px-10 pb-6 md:py-10">
 
         <div class="overflow-x-auto">
             <table class="w-full divide-y divide-gray-200">
