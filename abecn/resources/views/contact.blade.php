@@ -44,22 +44,23 @@
                 </div>
             </div>
         </section>
-        <form action="#" method="post" class="mb-24 contact-form py-12">
-            <div class="inner-container">
-                <h3 class="text-white">Send us a Message</h3>
+        <div class="inner-container">
+            <h3>Send us a Message</h3>
+            <hr class="text-border w-[5%] mb-6">
+            <form action="#" method="post" class="mb-24 contact-form p-12 rounded-lg">
                 <div class="name-subject md:flex justify-between">
                     <div class="text-white basis-[49%] mb-6">
                         <label class="block" for="yourname">Your Name</label>
-                        <input class="w-full text-black" type="text" name="name" id="name">
+                        <input class="w-full text-black rounded-lg" type="text" name="name" id="name">
                     </div>
                     <div class="text-white basis-[49%] mb-6">
                         <label class="block" for="subject">Subject</label>
-                        <input class="w-full text-black" type="text" name="subject" id="subject">
+                        <input class="w-full text-black rounded-lg" type="text" name="subject" id="subject">
                     </div>
                 </div>
                 <div class="text-white mb-6">
                     <label class="block" for="message">Your Message</label>
-                    <textarea class="w-full text-black" name="message" id="message" rows="8" class="block"></textarea>
+                    <textarea class="w-full text-black rounded-lg" name="message" id="message" rows="8" class="block"></textarea>
                 </div>
                 <div class="flex justify-center">
                     <input class="light-btn text-white" type="submit" value="Send Message">
