@@ -1,6 +1,15 @@
 <x-app-layout>
     <main class="max-w-none mt-4 md:mt-0 px-6 sm:px-8 lg:px-10 pb-6 md:py-10">
 
+        <div class="max-w-lg mx-auto mb-6">
+            <form action="#" method="GET" class="sm:flex sm:gap-4">
+                <x-text-input type="text" name="search" id="search" placeholder="Search Users" class="mb-3 sm:mb-0 block w-full bg-white text-sm" value="{{ request('search') }}" />
+                <x-primary-button>
+                    {{ __('Search') }}
+                </x-primary-button>
+            </form>
+        </div>
+
         <div class="overflow-x-auto">
             <table class="w-full divide-y divide-gray-200">
                 <thead>

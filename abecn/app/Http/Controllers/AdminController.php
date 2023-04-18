@@ -16,7 +16,7 @@ class AdminController extends Controller
      */
     public function edit(Request $request): View
     {
-        $users = User::paginate(20);
+        $users = User::filter(request(['search']))->paginate(20);
         return view('dashboard', ['users' => $users]);
     }
 
