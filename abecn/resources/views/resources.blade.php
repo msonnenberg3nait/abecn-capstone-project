@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name="title"><?php echo $title; ?></x-slot>
     <main>
-        <section class="resources-banner w-full mb-9" style="height:17rem;">
+        <section class="resources-banner w-full" style="height:17rem;">
             <div class="resources-banner bg-cover bg-center flex items-center text-center justify-center align-middle h-full w-full">
             <div class="banner-text inner-container">
                 <h2>Resources</h2>
