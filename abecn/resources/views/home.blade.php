@@ -78,24 +78,11 @@
                 <h3 class="text-center">Our Sponsors</h3>
                 <div class="sponsors-slider mb-6">
                     <div class="slide-track">
+                    @foreach ($sponsors as $sponsor)
                         <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
+                        <a href="/sponsors/{{ $sponsor->company_name }}"><img src="{{ $sponsor->img }}" alt="{{  $sponsor->company_name }} Logo"></a>
                         </div>
-                        <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
-                        </div>
-                        <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
-                        </div>
-                        <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
-                        </div>
-                        <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
-                        </div>
-                        <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
-                        </div>
+                    @endforeach
                     </div>
                 </div>
                 <div class="flex justify-center">
