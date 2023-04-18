@@ -259,8 +259,10 @@ hr {
 /*********** membership info page *********/
 .membership {
     background-color: var(--light);
-    height: 35.75rem;
-    margin-bottom: 24rem;
+}
+
+.membership-text {
+    padding-top: 4.5rem;
 }
 
 .membership-img {
@@ -617,12 +619,11 @@ footer {
         align-items: center;
         gap: 4rem;
         margin: 4.5rem 0 9rem 0;
+        height: 28.5rem;
     }
 
     .membership-text {
         flex-basis: 50%;
-        padding-top: 0;
-        margin-bottom: 0;
     }
 
     .membership-img {
@@ -737,6 +738,7 @@ footer {
     .slide-track {
         animation: none;
     }
+
 }
 
 @media screen and (min-width: 1400px) {
@@ -747,6 +749,10 @@ footer {
     .inner-container {
         max-width: 1400px;
         margin: 0 auto;
+    }
+    
+    .membership-text {
+        padding-top: 1rem;
     }
 
     .our-vision {
