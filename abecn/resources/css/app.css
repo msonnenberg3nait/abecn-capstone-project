@@ -546,7 +546,7 @@ footer {
         left: -77%; /* estimate */
     }
 
-    nav ul ul a {
+    nav:not(.pagination nav) ul ul a {
         width: 12rem;
         padding-right: 0.5rem;
         padding-left: 0.5rem;
@@ -728,7 +728,7 @@ footer {
         left: -82%; /* estimate */
     }
 
-    nav ul ul a {
+    nav:not(.pagination nav) ul ul a {
         width: 16rem;
     }
 }
