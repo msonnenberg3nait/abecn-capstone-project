@@ -13,7 +13,7 @@
                     <div class="about-abecn">
                         <h3>About ABECN</h3>
                         <hr class="text-border w-[10%] mb-6">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quibusdam cumque. Ex quia soluta commodi vero laudantium sit. Possimus maxime molestias, provident saepe nihil incidunt rerum consequatur voluptatem suscipit natus aliquam fuga facilis minus blanditiis accusamus expedita optio, quo facere totam dolore. Assumenda quasi quas iure amet voluptas sequi corporis fugiat itaque aspernatur odit explicabo, iusto unde repellendus magni iste illo praesentium!</p>
+                        <p>We are a building envelope council organization based in Edmonton, Alberta, dedicated to promoting excellence in building envelope design and construction. Our organization provides a range of resources, networking opportunities, and educational materials to help professionals in the industry stay current with the latest trends and best practices in this important field. We believe that by fostering a strong community of professionals, we can help improve the quality and performance of building envelopes, reduce energy consumption, and create a more sustainable built environment. Whether you're an architect, engineer, contractor, or building owner, we welcome you to join our community and take advantage of the benefits that our organization has to offer.</p>
                     </div>
                     <div class="history">
                         <h4>Our History</h4>
