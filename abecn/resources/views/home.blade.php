@@ -16,7 +16,7 @@
             <div class="welcome inner-container">
                 <div class="welcome-text">
                     <h3>WELCOME TO ABEC NORTH</h3>
-                    <hr class="text-border w-[30%] mb-6">
+                    <hr class="text-border w-[15%] mb-6">
                     <p>ABECN is a non-profit society dedicated to encouraging the pursuit of excellence in the design, construction, and performance of building enclosures and to advancing educational and technical standards within the Building Envelope industry.</p>
                     <a class="dark-btn mb-6" href="/about">About Us</a>
                 </div>
