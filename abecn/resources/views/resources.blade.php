@@ -16,18 +16,18 @@
                     <div class="links-text">
                         <section>
                             <ul class="category">
-                                <h4 class="mb-6">Link Category Name</h4>
-                                <li><a class="underline mb-6" href="#">link name here. Lorem Ipsum dolor sit amet, consectur</a></li>
-                                <li><a class="underline mb-6" href="#">link name here. Lorem Ipsum dolor sit amet, consectur</a></li>
-                                <li><a class="underline mb-6" href="#">link name here. Lorem Ipsum dolor sit amet, consectur</a></li>
+                                <h4 class="mb-6">Technical Resources</h4>
+                                <li><a class="underline mb-6" href="https://nrc.canada.ca/en/" target="_blank">National Research Council Canada </a></li>
+                                <li><a class="underline mb-6" href="https://www.alberta.ca/building-fire-codes.aspx" target="_blank">Alberta Building and Fire Codes</a></li>
+                                <li><a class="underline mb-6" href="https://www.nrcan.gc.ca/energy-efficiency/products-services/canadian-construction-materials-centre-ccmc/18643" target="_blank">Canadian Construction Materials Centre</a></li>
                             </ul>
                         </section>
                         <section>
                             <ul class="category">
-                                <h4 class="mb-6">Link Category Name</h4>
-                                <li><a class="underline mb-6" href="#">link name here. Lorem Ipsum dolor sit amet, consectur</a></li>
-                                <li><a class="underline mb-6" href="#">link name here. Lorem Ipsum dolor sit amet, consectur</a></li>
-                                <li><a class="underline mb-6" href="#">link name here. Lorem Ipsum dolor sit amet, consectur</a></li>
+                                <h4 class="mb-6">Industry News and Updates</h4>
+                                <li><a class="underline mb-6" href="https://www.constructioncanada.net/" target="_blank">Construction Canada</a></li>
+                                <li><a class="underline mb-6" href="https://canada.constructconnect.com/dcn" target="_blank">Daily Commercial News</a></li>
+                                <li><a class="underline mb-6" href="https://www.cisc-icca.ca/" target="_blank">Canadian Institute of Steel Construction</a></li>
                             </ul>
                         </section>
                     </div>
