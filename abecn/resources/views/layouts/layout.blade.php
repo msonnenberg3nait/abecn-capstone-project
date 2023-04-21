@@ -55,7 +55,7 @@
             <nav x-show="window.innerWidth >= 760 ? true: open" class="h-fit z-10">
                 <ul>
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>
+                    <li class="test-class">
                         <a href="/memberinfo">
                             Membership Info
                         </a>
