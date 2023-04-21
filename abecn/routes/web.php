@@ -25,7 +25,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $title = 'Home';
-    return view('home', compact('title'));
+    $sponsor = Sponsor::get();
+    return view('home', [
+        'sponsors' => $sponsor,
+        'title' => $title
+    ]);
+    
+    
+
 })->name('home');
 
 // User Profile

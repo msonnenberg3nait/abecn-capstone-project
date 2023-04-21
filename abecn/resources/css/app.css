@@ -308,7 +308,6 @@ hr {
 }
 
 .member-card {
-    gap: 2rem;
     padding: 1.5rem;
     max-width: 34rem;
 }
@@ -457,7 +456,6 @@ footer {
 
 .newsletter {
     background-color: var(--light);
-    color: #fff;
     max-width: 620px;
 }
 
@@ -467,13 +465,20 @@ footer {
 
 .footer-btn {
     margin-top: 1.6rem;
-    padding: 6px 14px 6px 14px;
+    padding: 5px 14px 5px 14px;
     font-weight: bold;
     border-radius: 0.7rem;
     box-sizing: border-box;
     text-transform: uppercase;
     background-color: var(--medium);
-    border: 1px solid transparent;
+    border: 2px solid transparent;
+}
+
+.footer-btn:hover {
+    background-color: #FFF;
+    border: 2px solid var(--medium);
+    color: var(--medium);
+    cursor: pointer;
 }
 
 /********** media queries ************/

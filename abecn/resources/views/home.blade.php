@@ -8,7 +8,7 @@
                         <h2>Alberta Building Envelope Council North</h2>
                         <p class="font-bold text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
                     </div>
-                    <a href="/register" class="light-btn">Become a Member</a>
+                    <a href="/memberinfo" class="light-btn">Become a Member</a>
                 </div>
             </div>
         </section>
@@ -16,7 +16,7 @@
             <div class="welcome inner-container">
                 <div class="welcome-text">
                     <h3>WELCOME TO ABEC NORTH</h3>
-                    <hr class="text-border w-[30%] mb-6">
+                    <hr class="text-border w-[15%] mb-6">
                     <p>ABECN is a non-profit society dedicated to encouraging the pursuit of excellence in the design, construction, and performance of building enclosures and to advancing educational and technical standards within the Building Envelope industry.</p>
                     <a class="dark-btn mb-6" href="/about">About Us</a>
                 </div>
@@ -78,28 +78,15 @@
                 <h3 class="text-center">Our Sponsors</h3>
                 <div class="sponsors-slider mb-6">
                     <div class="slide-track">
+                    @foreach ($sponsors as $sponsor)
                         <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
+                        <a href="/sponsors/{{ $sponsor->company_name }}"><img src="{{ $sponsor->img }}" alt="{{  $sponsor->company_name }} Logo"></a>
                         </div>
-                        <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
-                        </div>
-                        <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
-                        </div>
-                        <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
-                        </div>
-                        <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
-                        </div>
-                        <div class="slide inline-block">
-                            <img src="{{ asset('img/london-eye.webp') }}" alt="The London Eye">
-                        </div>
+                    @endforeach
                     </div>
                 </div>
                 <div class="flex justify-center">
-                    <a href="/register" class="dark-btn">Become a Member</a>
+                    <a href="/memberinfo" class="dark-btn">Become a Member</a>
                 </div>
             </div>
         </section>

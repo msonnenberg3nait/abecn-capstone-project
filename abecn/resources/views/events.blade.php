@@ -6,7 +6,7 @@
                 <div class="events-text">
                     <h2>Events</h2>
                     <hr class="text-border w-[10%] mb-6">
-                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p class="text-white">We offer a variety of events throughout the year including in-person training sessions, and industry conferences, to help you stay up-to-date on the latest trends and best practices in this important field. Our events are designed to provide you with a valuable learning experience and the opportunity to connect with industry professionals and fellow members of our council.</p>
                 </div>
                 <div class="events-img">
                     <div class="events-img-top">
