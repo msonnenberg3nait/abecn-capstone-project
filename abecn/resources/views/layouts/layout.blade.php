@@ -132,7 +132,7 @@
                 </a>
                 <ul class="footer-links">
                     <li class="mb-2"><a href="#">PRIVACY</a></li>
-                    <li class="mb-2"><a href="#">COPYRIGHT</a></li>
+                    <li class="mb-2"><a href="license.txt">COPYRIGHT</a></li>
                     <li class="mb-2"><a href="#">SITEMAP</a></li>
                     <li class="mb-2"><a href="/contact">CONTACT US</a></li>
                 </ul>
