@@ -139,7 +139,7 @@
             </div>
             <div class="socials-newsletter">
                 <div class="social-icons flex justify-between my-8">
-                    <a href="#">
+                    <a href="https://www.linkedin.com/company/alberta-building-envelope-council-north/">
                         <img src="{{ asset('img/linkedin-icon.png') }}" class="w-3/4" alt="Linkedin icon">
                     </a>
                     <a href="#">
