@@ -63,7 +63,7 @@ Route::middleware(['auth', 'can:isAdmin', 'throttle:20,1'])->group(function () {
 
 Route::get('/sponsors', function () {
     $title = 'Sponsors';
-    $sponsors = Sponsor::paginate(12);
+    $sponsors = Sponsor::filter(request(['search']))->paginate(12);
     return view('sponsors', [
         'sponsors' => $sponsors,
         'title' => $title
@@ -80,7 +80,7 @@ Route::get('sponsors/{sponsor:company_name}', function (Sponsor $sponsor) {
 
 Route::get('/memberdirectory', function () {
     $title = 'Member Directory';
-    $users = User::paginate(20);
+    $users = User::filter(request(['search']))->paginate(16);
     return view('/memberdirectory', [
         'users' => $users,
         'title' => $title
