@@ -1,6 +1,7 @@
 <x-layout>
     <x-slot name="title"><?php echo $title; ?></x-slot>
-        <h3>{{ $sponsor->company_name }}</h3>
+    <main class="inner-container">
+        <h3 class="mt-24">{{ $sponsor->company_name }}</h3>
         <img src="{{ $sponsor->img }}" alt="Photo"/>
         <section class="sponsor-address">
             <h3>Address</h3>
@@ -20,5 +21,5 @@
                 <img src="{{ $sponsor->project_img }}" alt="Photo" >
             </div>
         </section>
-
+    </main>
 </x-layout>

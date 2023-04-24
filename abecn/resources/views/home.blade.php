@@ -6,7 +6,7 @@
                 <div class="banner-text inner-container">
                     <div class="mb-6">
                         <h2>Alberta Building Envelope Council North</h2>
-                        <p class="font-bold text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                        <p class="font-bold text-white">Connecting communities across the building envelope industry</p>
                     </div>
                     <a href="/memberinfo" class="light-btn">Become a Member</a>
                 </div>

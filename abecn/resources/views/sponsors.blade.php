@@ -8,19 +8,23 @@
                 </div>
             </div>
         </section>
-        <div class="search-filter-wrapper inner-container flex items-center align-center mb-9">
-            <x-search>
-            </x-search>
-
-            <x-filter>
-            </x-filter>
+        <div class="flex mb-12">
+            <div class="search-filter-wrapper inner-container flex items-center align-center mb-9 mx-auto">
+                <x-search>
+                </x-search>
+    
+                <x-filter>
+                </x-filter>
+            </div>
         </div>
         <div class="sponsors-wrapper inner-container mb-9">
-            <section class="sponsor-card">
+            <section class="sponsor-card md:flex flex-wrap gap-4">
                 @foreach ($sponsors as $sponsor)
                 <div class="mx-auto">
-                    <a href="/sponsors/{{ $sponsor->company_name }}"><h3>{{ $sponsor->company_name }}</h3></a>
-                    <img src="{{ $sponsor->img }}" alt="Photo">
+                    <a href="/sponsors/{{ $sponsor->company_name }}">
+                        <h3 class="text-center">{{ $sponsor->company_name }}</h3>
+                        <img src="{{ $sponsor->img }}" alt="Photo">
+                    </a>
                 </div>
                 @endforeach
             </section>

@@ -6,7 +6,7 @@
     --darkgrey: #212427;
     --dark: #102F58;
     --medium: #1E4C86;
-    --light: #6AA8C3;
+    --light: #549CBB;
     --lighthover: #9ec4d4;
 }
 
@@ -188,6 +188,7 @@ section {
 .light-btn:hover {
     background-color: var(--lighthover);
     color: var(--medium);
+    cursor: pointer;
 }
 
 .dark-btn {
@@ -285,13 +286,7 @@ hr {
 
 /*********** sponsors page ***********/
 .sponsors-banner {
-    background-image: url('../../public/img/building-edge.webp');
-}
-
-.sponsor-card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    background: linear-gradient(rgba(2, 59, 105, 0.448),rgba(12, 54, 85, 0.456)), url('../../public/img/building-edge.webp') center center / cover;
 }
 
 .sponsor-card div {
@@ -300,6 +295,17 @@ hr {
 
 .search-filter-wrapper {
     gap: 4rem;
+}
+
+.search {
+    background-color: #f2f2f2;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.375rem;
+    width: 50vw;
+}
+
+.first-of-type\:rounded-t-md {
+    color: var(--darkgrey); /* filter dropdown text color */
 }
 
 /******** member directory page ******/
@@ -358,11 +364,10 @@ hr {
 
 }
 
-/************** events **************/
+/************** events page **************/
 .events-banner {
     background-color: var(--light);
-    height: 22rem;
-    margin-bottom: 20rem;
+    padding-bottom: 0.75rem;
 }
 
 .events-img {
@@ -382,7 +387,6 @@ hr {
 .events-img-bottom {
     grid-column: 4 / -1;
     grid-row: 1;
-    padding-top: 8%;
 }
 
 .events-text {
@@ -424,17 +428,17 @@ hr {
 
 /************** committees **************/
 .committees-banner {
-    background-image: url('../../public/img/committee.webp');
+    background: linear-gradient(rgba(0, 23, 96, 0.448),rgba(18, 57, 129, 0.456)), url('../../public/img/committee.webp') center center / cover;
 }
 
 /******** board of directors page ********/
 .directors-banner {
-    background-image: url('../../public/img/work-meeting.webp');
+    background: linear-gradient(rgba(0, 23, 96, 0.448),rgba(18, 57, 129, 0.456)), url('../../public/img/work-meeting.webp') center center / cover;
 }
 
 /*********** contact page ***********/
 .contact-banner {
-    background-image: url('../../public/img/using-phone.webp');
+    background: linear-gradient(rgba(0, 17, 74, 0.36),rgba(13, 43, 98, 0.34)), url('../../public/img/using-phone.webp') center center / cover;
 }
 
 .get-in-touch {
@@ -452,6 +456,10 @@ hr {
 /************** footer **************/
 footer {
     background-color: var(--medium);
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 .newsletter {
@@ -491,12 +499,16 @@ footer {
         margin-top: 45px;
     }
 
+    .logo img {
+        padding: 0.5rem;
+    }
+
     .hamburger-menu {
         display: none;
     }
 
     .outer-nav {
-        padding: 0.75rem 1.25rem;
+        padding: 0 1.5rem;
     }
 
     .inner-nav {
@@ -515,7 +527,7 @@ footer {
     }
 
     nav:not(.pagination nav) a {
-        padding: 0.75rem 0;
+        padding: 2rem 0;
         border-bottom: 0;
     }
 
@@ -526,7 +538,7 @@ footer {
     nav > ul,
     .secondary-header > div {
         display: flex;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     nav ul li:has(ul) {
@@ -543,6 +555,15 @@ footer {
     nav > ul > li:hover > ul {
         max-height: unset;
         overflow: unset;
+    }
+
+    nav > ul > li:hover > ul li a{
+        padding: 1.25rem 0;
+    }
+
+    nav > ul > li:hover > ul li a:hover{
+        background-color: var(--light);
+        text-decoration: none;
     }
 
     nav .member-info-dropdown {
@@ -641,45 +662,28 @@ footer {
     }
 
     /************** resources page **********/
-    .links {
-        display: flex;
-        justify-content: space-between;
-    }
-
     .latest-publications div img {
         max-width: 15rem;
     }
 
     /***************** events page ***************/
-    .events-banner {
+    .events-banner-flex {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        margin-top: 4.5rem;
+        /* margin-top: 4.5rem; */
         margin-bottom: 0;
+        height: 25rem;
     }
 
     .events-text {
-        max-width: 50%;
+        max-width: 55%;
         padding-top: 0;
     }
 
     /*************** about us page *************/
-    .about {
-        display: flex;
-        gap: 4rem;
-    }
-
-    .about-img-bottom {
-        padding-top: 18%;
-    }
-
     .about-text {
         max-width: 50vw;
     }
-
-    /********* board of directors page *********/
-
 
     /***************** footer ***************/
     .footer-links {
@@ -755,7 +759,7 @@ footer {
         max-width: 1400px;
         margin: 0 auto;
     }
-    
+
     .membership-text {
         padding-top: 1rem;
     }

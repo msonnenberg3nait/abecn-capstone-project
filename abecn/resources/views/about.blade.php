@@ -8,8 +8,8 @@
             </div>
         </section>
         <section>
-            <div class="about inner-container">
-                <div class="about-text lg:basis-1/2">
+            <div class="about inner-container md:flex gap-16">
+                <div class="about-text lg:basis-1/2]">
                     <div class="about-abecn">
                         <h3>About ABECN</h3>
                         <hr class="text-border w-[10%] mb-6">
@@ -24,7 +24,7 @@
                     <div class="about-img-top">
                         <img src="{{ asset('img/blue-city.webp') }}" alt="Silhouette of a singer performing with a blue background">
                     </div>
-                    <div class="about-img-bottom">
+                    <div class="about-img-bottom pt-[18%]">
                         <img src="{{ asset('img/venue.webp') }}" alt="Interior view of a venue occupied with people">
                     </div>
                 </div>
