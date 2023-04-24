@@ -37,7 +37,7 @@ class PaymentController extends Controller
 
         $user->newSubscription($membership->stripe_name, $membership->stripe_price_id)->create($paymentMethod);
 
-        return redirect()->route('/edit');
+        return redirect()->route('edit');
     }
 
 }
