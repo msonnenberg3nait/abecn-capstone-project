@@ -17,7 +17,10 @@
                     <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
             </div>
-            @endforeach
-      </section>
+        @endforeach
+        </section>
+        <div class="pagination mt-8 max-w-7xl mx-auto xl:px-8">
+            {{ $users->links() }}
+        </div>
     </main>
 </x-layout>

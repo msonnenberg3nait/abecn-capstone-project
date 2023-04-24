@@ -25,5 +25,8 @@
                 @endforeach
             </section>
         </div>
+        <div class="pagination mt-8 max-w-7xl mx-auto xl:px-8">
+            {{ $sponsors->links() }}
+        </div>
     </main>
 </x-layout>
