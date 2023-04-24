@@ -8,6 +8,14 @@
                 </div>
             </div>
         </section>
+        <div class="max-w-lg mx-auto mb-6">
+            <form action="#" method="GET" class="sm:flex sm:gap-4">
+                <x-text-input type="text" name="search" id="search" placeholder="Search Member Directory" class="mb-3 sm:mb-0 block w-full bg-white text-sm" value="{{ request('search') }}" />
+                <x-primary-button>
+                    {{ __('Search') }}
+                </x-primary-button>
+            </form>
+        </div>
         <section class="members inner-container md:flex flex-wrap">
         @foreach ($users as $user)
             <div class="member-card mx-auto bg-slate-100 mb-9 text-center rounded-lg drop-shadow-lg">
@@ -17,7 +25,10 @@
                     <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
             </div>
-            @endforeach
-      </section>
+        @endforeach
+        </section>
+        <div class="pagination mt-8 max-w-7xl mx-auto xl:px-8">
+            {{ $users->links() }}
+        </div>
     </main>
 </x-layout>

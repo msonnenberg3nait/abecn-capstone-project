@@ -10,11 +10,14 @@
         </section>
         <div class="flex mb-12">
             <div class="search-filter-wrapper inner-container flex items-center align-center mb-9 mx-auto">
-                <x-search>
-                </x-search>
-    
-                <x-filter>
-                </x-filter>
+                <div class="max-w-lg mx-auto mb-6">
+                    <form action="#" method="GET" class="sm:flex sm:gap-4">
+                        <x-text-input type="text" name="search" id="search" placeholder="Search Sponsors" class="mb-3 sm:mb-0 block w-full bg-white text-sm" value="{{ request('search') }}" />
+                        <x-primary-button>
+                            {{ __('Search') }}
+                        </x-primary-button>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="sponsors-wrapper inner-container mb-9">
@@ -28,6 +31,9 @@
                 </div>
                 @endforeach
             </section>
+        </div>
+        <div class="pagination mt-8 max-w-7xl mx-auto xl:px-8">
+            {{ $sponsors->links() }}
         </div>
     </main>
 </x-layout>
