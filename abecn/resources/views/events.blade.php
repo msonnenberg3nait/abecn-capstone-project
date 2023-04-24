@@ -35,9 +35,9 @@
                             <img src="{{ asset('img/group-work-laptops.webp') }}" alt="Top view of a group working on a table">
                         </div>
                         <div class="event-text">
-                            <h4>Title Here</h4>
-                            <p class="mb-3">02/05/2023 | By Author</p>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus laborum consectetur atque nobis repellendus nisi quam blanditiis sequi, iure error...</p>
+                            <h4>Casual Night</h4>
+                            <p class="mb-3">05/23/2023 | By Tanner Clark</p>
+                            <p>Come out for a casual night to meet the board of ABECN and also other individuals in the building envelope industry...</p>
                             <a class="dark-btn" href="#">Read More</a>
                         </div>
                     </div>
@@ -49,9 +49,9 @@
                             <img src="{{ asset('img/lecture.webp') }}" alt="Side view of a lecture">
                         </div>
                         <div class="event-text">
-                            <h4>Title Here</h4>
-                            <p class="mb-3">02/05/2023 | By Author</p>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus laborum consectetur atque nobis repellendus nisi quam blanditiis sequi, iure error...</p>
+                            <h4>Roof Code Updates and Procedures</h4>
+                            <p class="mb-3">05/05/2023 | By Jeff Low</p>
+                            <p>Jeff Low talks about the updates to roof codes and also the new procedures to follow so that you can have the latest...</p>
                             <a class="dark-btn" href="#">Read More</a>
                         </div>
                     </div>
@@ -63,9 +63,9 @@
                             <img src="{{ asset('img/men-discussing.webp') }}" alt="Four men discussing">
                         </div>
                         <div class="event-text">
-                            <h4>Title Here</h4>
-                            <p class="mb-3">02/05/2023 | By Author</p>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus laborum consectetur atque nobis repellendus nisi quam blanditiis sequi, iure error...</p>
+                            <h4>The Importance Of A Strong Foundation</h4>
+                            <p class="mb-3">02/05/2023 | By Taylor West</p>
+                            <p>Taylor West will be talking about the importance of building a strong foundation and the different prouducts in...</p>
                             <a class="dark-btn" href="#">Read More</a>
                         </div>
                     </div>
