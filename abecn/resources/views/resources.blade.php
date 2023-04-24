@@ -12,8 +12,8 @@
             <div class="inner-container">
                 <h3>Links</h3>
                 <hr class="text-border w-[5%] mb-6">
-                <div class="links">
-                    <div class="links-text">
+                <div class="links md:flex">
+                    <div class="links-text basis-1/2">
                         <section>
                             <ul class="category">
                                 <h4 class="mb-6">Technical Resources</h4>
@@ -31,7 +31,7 @@
                             </ul>
                         </section>
                     </div>
-                    <div class="resources-img">
+                    <div class="resources-img basis-1/2">
                         <div class="resources-img-top">
                             <img class="w-3/4" src="{{ asset('img/pair-working.webp') }}" alt="View of construction cranes with the sky in the background">
                         </div>
