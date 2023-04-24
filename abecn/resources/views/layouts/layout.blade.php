@@ -156,11 +156,11 @@
                     <h3 class="mb-3">SIGN UP FOR OUR NEWSLETTER</h3>
                     <div class="newsletter-flex">
                         <div class="mb-4">
-                            <label class="block text-white" for="newsletter-name">Full Name</label>
+                            <label class="block" for="newsletter-name">Full Name</label>
                             <input class="w-full border-none" type="text" name="newsletter-name" id="newsletter-name">
                         </div>
                         <div class="mb-4">
-                            <label class="block text-white" for="newsletter-email">Email</label>
+                            <label class="block" for="newsletter-email">Email</label>
                             <input class="w-full border-none" type="email" name="newsletter-email" id="newsletter-email">
                         </div>
                         <div class="mb-4">
