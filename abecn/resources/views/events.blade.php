@@ -64,7 +64,7 @@
                         </div>
                         <div class="event-text">
                             <h4>The Importance Of A Strong Foundation</h4>
-                            <p class="mb-3">02/05/2023 | By Taylor West</p>
+                            <p class="mb-3">05/02/2023 | By Taylor West</p>
                             <p>Taylor West will be talking about the importance of building a strong foundation and the different prouducts in...</p>
                             <a class="dark-btn" href="#">Read More</a>
                         </div>
